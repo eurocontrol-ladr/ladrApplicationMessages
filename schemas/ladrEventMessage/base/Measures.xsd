@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.fixm.aero/base/4.2" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fb="http://www.fixm.aero/base/4.2" elementFormDefault="qualified" version="4.2.0">
+	<xs:annotation>
+		<xs:documentation>This package contains Measure types and related units of measure. [FIXM]
+
+=========================================== 
+Copyright (c) 2020 Airservices Australia, DSNA, EUROCONTROL, GCAA UAE, IATA, International Coordinating Council of Aerospace Industries Associations, JCAB, NATS Limited, NAV CANADA, SESAR Joint Undertaking and US FAA 
+=========================================== 
+All rights reserved. 
+          
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 
+	- Redistributions of source code must retain the above copyright notice, this list of conditions and the disclaimer.
+	- Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the disclaimer in the documentation and/or other materials provided with the distribution.
+	- Neither the names of Airservices Australia, DSNA, EUROCONTROL, GCAA UAE, IATA, International Coordinating Council of Aerospace Industries Associations, JCAB, NATS Limited, NAV CANADA, SESAR Joint Undertaking and US FAA nor the names of their contributors may be used to endorse or promote products derived from this specification without specific prior written permission.
+          
+DISCLAIMER 
+          
+THIS SPECIFICATION IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+          
+========================================== 
+Editorial note: this license is an instance of the BSD license template as provided by the Open Source Initiative: 
+http://www.opensource.org/licenses/bsd-license.php 
+          
+The authoritative reference for FIXM is www.FIXM.aero. 
+          
+Details on Airservices Australia: http://www.airservicesaustralia.com/ 
+Details on DSNA: http://www.developpement-durable.gouv.fr/-Navigation-aerienne-.html 
+Details on EUROCONTROL: http://www.eurocontrol.int/ 
+Details on IATA: http://www.iata.org/Pages/default.aspx 
+Details on JCAB: http://www.mlit.go.jp/en/koku/index.html 
+Details on NATS Limited: http://www.nats.co.uk/ 
+Details on NAV CANADA: http://www.navcanada.ca/ 
+Details on the UAE GCAA: https://www.gcaa.gov.ae 
+Details on the ICCAIA: www.iccaia.org 
+Details on the SESAR JU and its members: http://www.sesarju.eu/discover-sesar/partnering-smarter-aviation/members 
+Details on the US FAA: http://www.faa.gov/ </xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="UnitOfMeasures.xsd"/>
+	<xs:simpleType name="MeasureType">
+		<xs:annotation>
+			<xs:documentation>The result from performing the act or process of ascertaining the value of a characteristic of some entity. [ISO 19103, chapter 6.5.7.2] </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:simpleType name="RestrictedAngleType">
+		<xs:annotation>
+			<xs:documentation>Helper type for restrictions on Angle</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="fb:MeasureType">
+			<xs:maxInclusive value="360"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RestrictedGroundSpeedType">
+		<xs:annotation>
+			<xs:documentation>Helper type for restrictions on GroundSpeed</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="fb:SpeedType">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RestrictedLengthType">
+		<xs:annotation>
+			<xs:documentation>Helper type for restrictions on Length</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="fb:MeasureType">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpeedType">
+		<xs:annotation>
+			<xs:documentation>The value of a speed. [AIXM 5.1]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="fb:MeasureType"/>
+	</xs:simpleType>
+	<xs:simpleType name="VerticalDistanceType">
+		<xs:annotation>
+			<xs:documentation>A vertical distance value. [AIXM 5.1]</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="fb:MeasureType"/>
+	</xs:simpleType>
+	<xs:simpleType name="ZeroBearingTypeType">
+		<xs:annotation>
+			<xs:documentation>A code indicating the direction of the zero bearing.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TRUE_NORTH">
+				<xs:annotation>
+					<xs:documentation>This value indicates that the direction is relative to True North.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MAGNETIC_NORTH">
+				<xs:annotation>
+					<xs:documentation>This value indicates that the direction is relative to Magnetic North.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AltitudeType">
+		<xs:annotation>
+			<xs:documentation>The vertical distance of a level, a point or an object considered as a point, measured from mean sea level (MSL). [ICAO Doc 4444]</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="fb:VerticalDistanceType">
+				<xs:attribute name="uom" use="required" type="fb:UomAltitudeType">
+					<xs:annotation>
+						<xs:documentation>Unit of measure</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="AngleType">
+		<xs:annotation>
+			<xs:documentation>The amount of rotation needed to bring one line or plane into coincidence with another, generally measured in radians or degrees. [ISO 19103, chapter 6.5.7.9]</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="fb:RestrictedAngleType">
+				<xs:attribute name="uom" use="required" type="fb:UomAngleType">
+					<xs:annotation>
+						<xs:documentation>Unit of measure</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="BearingType">
+		<xs:annotation>
+			<xs:documentation>A data type used to represent direction in the coordinate reference system. [ISO 19107, chapter 6.3.12.1]
+
+The value of a bearing indication (at a given point) is measured as the angle between the bearing and either True North or Magnetic North. The angle is measured clockwise from 0 degrees up to and including 360 degrees. The value can also be a VOR radial.  [AIXM 5.1]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="fb:AngleType">
+				<xs:sequence/>
+				<xs:attribute name="zeroBearingType" use="optional" type="fb:ZeroBearingTypeType"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DistanceType">
+		<xs:annotation>
+			<xs:documentation>A type for returning the separation between two points. [ISO 19103, chapter 6.5.7.7]</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="fb:LengthType">
+				<xs:sequence/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GroundSpeedType">
+		<xs:annotation>
+			<xs:documentation>The speed of an aircraft relative to the surface of the earth. [ICAO Doc 9426]</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="fb:RestrictedGroundSpeedType">
+				<xs:attribute name="uom" use="required" type="fb:UomGroundSpeedType">
+					<xs:annotation>
+						<xs:documentation>Unit of measure</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="LengthType">
+		<xs:annotation>
+			<xs:documentation>The measure of distance as an integral, for example the length of curve, the perimeter of a polygon as the length of the boundary. [ISO 19103, chapter 6.5.7.6]</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="fb:RestrictedLengthType">
+				<xs:attribute name="uom" use="required" type="fb:UomLengthType">
+					<xs:annotation>
+						<xs:documentation>Unit of measure</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

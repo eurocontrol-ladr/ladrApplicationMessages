@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ladr:LadrMessage xmlns:ladr="http://www.eurocontrol.int/nm/fixm/app/ladr/1.0" xmlns:fx="http://www.fixm.aero/flight/4.2" xmlns:fb="http://www.fixm.aero/base/4.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eurocontrol.int/nm/fixm/app/ladr/1.0 ..\schemas\\ladrEventUploadValidationMessage\\ladrmessage\LadrMessage.xsd">
+	<ladr:timestamp>2022-01-19T06:00:10Z</ladr:timestamp>
+	<ladr:receiptTime>2022-01-19T06:00:11Z</ladr:receiptTime>
+	<ladr:type>LADR_EVENT_UPLOAD_VALIDATION_MESSAGE</ladr:type>
+	<ladr:messageValidationStatus>VALID</ladr:messageValidationStatus>
+	<ladr:referencedMessageIdentifier codeSpace="urn:uuid">49936b64-ff6d-4a7f-b633-67a60d869d1d</ladr:referencedMessageIdentifier>
+	<ladr:ladrEvent>
+		<ladr:identifier codeSpace="urn:uuid">a5e688eb-384a-4229-97b6-c29d39bf9069</ladr:identifier>
+		<ladr:contributorCode>
+			<fb:identifier>ABC</fb:identifier>
+		</ladr:contributorCode>
+	</ladr:ladrEvent>
+</ladr:LadrMessage>

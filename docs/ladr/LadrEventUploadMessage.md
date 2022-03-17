@@ -18,7 +18,7 @@
 
 ## XML schema and samples
 
-- Go to [Schema definition](https://github.com/eurocontrol-ladr/ladrMessages/tree/main/schemas/ladrEventUploadMessage) on Github
+Go to [Schema definition](https://github.com/eurocontrol-ladr/ladrMessages/tree/main/schemas/ladrEventUploadMessage) on Github
 
 |Example|Description|
 |:--|:---|

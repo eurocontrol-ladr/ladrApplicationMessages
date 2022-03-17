@@ -16,7 +16,7 @@
 
 ## How to use this web site
 
-- Use the side bar opposite to access the various sections of the FIXM User Manual;
+- Use the side bar opposite to access the various sections of this manual;
 - Use the search engine to look for a specific entry;
 - Use the buttons *< Previous* and *Next >* at the bottom of each page to navigate across the different sections of the manual.
 

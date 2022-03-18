@@ -1,6 +1,6 @@
 # LADR Messages
 
-This GITHUB repository supports the **development** of the XML schemas of the LADR Messages that are exchanged between LADR Contrinutors, LADR and LADR Users. This is NOT the reference for the official releases of the LADR schemas. The repository also contains LADR messages examples conformant to the XML schemas, and associated user guidance.
+This GITHUB repository supports the **development** of the XML schemas of the LADR Messages that are exchanged between LADR Contributors, LADR and LADR Users. This is NOT the reference for the official releases of the LADR schemas.
 
 
 ## Content

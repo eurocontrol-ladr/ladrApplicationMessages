@@ -9,6 +9,23 @@ This GITHUB repository supports the **development** of the XML schemas of the LA
 * ./docs: contains the pages that constitute the online guidance for LADR implementers. Based on GitHub Pages and Docsify technologies. See https://eurocontrol-ladr.github.io/ladrApplicationMessages/#/
 
 
+## Overviews of the LADR Application Messages
+
+```mermaid
+    sequenceDiagram
+    autonumber
+    actor Contributor
+    participant LADR
+    actor User
+    Contributor->>LADR: Distress Event Upload Message
+    LADR->>Contributor: Distress Event Upload Validation Message
+    LADR->>User: Distress Event Notification Message
+    LADR->>User: Distress Event Message 
+    User->>LADR: Distress Event Acknowledgment Message       
+    User->>LADR: Distress Event Validation Message
+```
+
+
 ## License
 
 Copyright (c) 2022, EUROCONTROL

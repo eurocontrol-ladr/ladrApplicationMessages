@@ -1,4 +1,4 @@
-# LADR Event Upload Message
+# Distress Event Upload Message
 
 ```mermaid
     sequenceDiagram
@@ -7,23 +7,23 @@
     participant LADR
     actor User
     rect rgb(255, 255, 0)
-    Contributor->>LADR: LADR Event Upload Message
+    Contributor->>LADR: Distress Event Upload Message
     end
-    LADR->>Contributor: LADR Event Upload Validation Message
-    LADR->> User: LADR Event Notification Message
-    LADR->>User: LADR Event Message 
-    User->>LADR: Event Notification Acknowledgment Message       
-    User->>LADR: Event Validation Message
+    LADR->>Contributor: Distress Event Upload Validation Message
+    LADR->> User: Distress Event Notification Message
+    LADR->>User: Distress Event Message 
+    User->>LADR: Distress Event Acknowledgment Message       
+    User->>LADR: Distress Event Validation Message
 ```
 
 ## XML schema and samples
 
-Go to [Schema definition](https://github.com/eurocontrol-ladr/ladrMessages/tree/main/schemas/ladrEventUploadMessage) on Github
+Go to [Schema definition](https://github.com/eurocontrol-ladr/ladrApplicationMessages/tree/main/schemas/DistressEventUploadMessage) on Github
 
 |Example|Description|
 |:--|:---|
-|[LadrEventUploadMessage_Example1_USMCC.xml](https://github.com/eurocontrol-ladr/ladrMessages/blob/main/samples/LadrEventUploadMessage_Example1_USMCC.xml)|...|
-|[LadrEventUploadMessage_Example2_SPMCC.xml](https://github.com/eurocontrol-ladr/ladrMessages/blob/main/samples/LadrEventUploadMessage_Example2_SPMCC.xml)|...|
+|[LadrEventUploadMessage_Example1_USMCC.xml](https://github.com/eurocontrol-ladr/ladrApplicationMessages/blob/main/samples/LadrEventUploadMessage_Example1_USMCC.xml)|...|
+|[LadrEventUploadMessage_Example2_SPMCC.xml](https://github.com/eurocontrol-ladr/ladrApplicationMessages/blob/main/samples/LadrEventUploadMessage_Example2_SPMCC.xml)|...|
 
 
 ## UML description

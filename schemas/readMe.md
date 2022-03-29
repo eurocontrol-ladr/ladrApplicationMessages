@@ -1,3 +1,0 @@
-
-# LADR Messages
-

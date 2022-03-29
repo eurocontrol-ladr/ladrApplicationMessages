@@ -1,12 +1,12 @@
-# LADR Messages
+# LADR Application Messages
 
-This GITHUB repository supports the **development** of the XML schemas of the LADR Messages that are exchanged between LADR Contributors, LADR and LADR Users. This is NOT the reference for the official releases of the LADR schemas.
+This GITHUB repository supports the **development** of the XML schemas of the LADR Application Messages that are exchanged between LADR Contributors, LADR and LADR Users. This is NOT the reference for the official releases of the LADR schemas.
 
 
 ## Content
-* ./schemas: contains the XSD schemas for the LADR Messages **under development**. One folder per LADR Message.
-* ./samples: contains XML examples of LADR Messages conformant to the XSD schemas.
-* ./docs: contains the pages that constitute the online guidance for LADR implementers. Based on GitHub Pages and Docsify technologies. See https://eurocontrol-ladr.github.io/ladrMessages/#/
+* ./schemas: contains the XSD schemas for the LADR Application Messages **under development**. One folder per LADR Application Message.
+* ./samples: contains XML examples of LADR Application Messages conformant to the XSD schemas.
+* ./docs: contains the pages that constitute the online guidance for LADR implementers. Based on GitHub Pages and Docsify technologies. See https://eurocontrol-ladr.github.io/ladrApplicationMessages/#/
 
 
 ## License

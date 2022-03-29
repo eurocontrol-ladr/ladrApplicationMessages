@@ -1,4 +1,4 @@
-# LADR Event Message
+# Distress Event Message
 
 ```mermaid
     sequenceDiagram
@@ -6,21 +6,21 @@
     actor Contributor
     participant LADR
     actor User
-    Contributor->>LADR: LADR Event Upload Message
-    LADR->>Contributor: LADR Event Upload Validation Message
-    LADR->> User: LADR Event Notification Message
+    Contributor->>LADR: Distress Event Upload Message
+    LADR->>Contributor: Distress Event Upload Validation Message
+    LADR->> User: Distress Event Notification Message
     rect rgb(255, 255, 0)    
-    LADR->>User: LADR Event Message 
+    LADR->>User: Distress Event Message
     end
-    User->>LADR: Event Notification Acknowledgment Message       
-    User->>LADR: Event Validation Message
+    User->>LADR: Distress Event Acknowledgment Message
+    User->>LADR: Distress Event Validation Message
 ```
 
 ## XML schema and samples
 
-- Go to [Schema definition](https://github.com/eurocontrol-ladr/ladrMessages/tree/main/schemas/ladrEventMessage) on Github
+- Go to [Schema definition](https://github.com/eurocontrol-ladr/ladrApplicationMessages/tree/main/schemas/DistressEventMessage) on Github
 
-- Go to [XML examples](https://github.com/hlepori/test_ladr/tree/main/samples) on Github
+- Go to [XML examples](https://github.com/eurocontrol-ladr/ladrApplicationMessages/tree/main/samples) on Github
 
 ## UML description
 

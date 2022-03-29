@@ -6,7 +6,7 @@
     actor Contributor
     participant LADR
     actor User
-    rect rgb(255, 255, 0)
+    rect rgb(0, 102, 255)
     Contributor->>LADR: Distress Event Upload Message
     end
     LADR->>Contributor: Distress Event Upload Validation Message

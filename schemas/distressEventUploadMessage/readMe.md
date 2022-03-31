@@ -86,7 +86,7 @@ class LadrAltitudeSource
 LadrAltitudeSource : BARO	
 LadrAltitudeSource : GNSS	
 LadrAltitude --> LadrAltitudeSource : +altitudeSource [1]	
-LadrLastPositionReportExtension --> LadrAltitude : +altitude [1]	
+LadrLastPositionReportExtension --> LadrAltitude : +altitude [0..1]	
 class Bearing	
 <<FIXM_Core>> Bearing	
 class ZeroBearingType	
@@ -95,12 +95,12 @@ ZeroBearingType : TRUE_NORTH
 ZeroBearingType : MAGNETIC_NORTH	
 Bearing --> ZeroBearingType : +zeroBearingType [1]	
 LadrLastPositionReportExtension --> Bearing : +heading [0..1]	
-LadrLastPositionReportExtension : + groundSpeed [1] GroundSpeed	
+LadrLastPositionReportExtension : + groundSpeed [0..1] GroundSpeed	
 class Distance	
 <<FIXM_Core>> Distance	
 LadrLastPositionReportExtension --> Distance : +horizontalAccuracy [0..1]	
 LastPositionReportExtension<|-- LadrLastPositionReportExtension	
-LastPositionReport --> LastPositionReportExtension : +extension [1..*]	
+LastPositionReport --> LastPositionReportExtension : +extension [0..*]	
 LastContact --> LastPositionReport : +position [1]	
 FlightEmergency --> LastContact : +lastContact [1]	
 Flight --> FlightEmergency : +emergency [1]	
@@ -111,4 +111,5 @@ Flight --> FlightIdentification : +flightIdentification [0..1]
 DistressEvent --> Flight : +flight [1]	
 LadrApplicationMessage --> DistressEvent : +distressEvent [1]	
 ```	
+
 

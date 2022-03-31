@@ -6,7 +6,6 @@ This GITHUB repository supports the **development** of the XML schemas of the LA
 ## Content
 * ./schemas: contains the XSD schemas for the LADR Application Messages **under development**. One folder per LADR Application Message.
 * ./samples: contains XML examples of LADR Application Messages conformant to the XSD schemas.
-* ./docs: contains the pages that constitute the online guidance for LADR implementers. Based on GitHub Pages and Docsify technologies. See https://eurocontrol-ladr.github.io/ladrApplicationMessages/#/
 
 
 ## Overviews of the LADR Application Messages

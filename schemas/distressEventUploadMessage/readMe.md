@@ -16,15 +16,23 @@
     User->>LADR: Distress Event Validation Message
 ```
 
-```mermaid
-classDiagram
-class LadrMessage	
-<<LADR_Application>> LadrMessage	
-LadrMessage : + timestamp [1] Time	
-class LadrMessageType	
-<<LADR_Application>> LadrMessageType	
-LadrMessageType : LADR_EVENT_UPLOAD_MESSAGE	
-LadrMessageType <-- LadrMessage : +type [1]	
+```mermaid	
+classDiagram	
+class LadrApplicationMessage	
+<<LADR_Application>> LadrApplicationMessage	
+class LadrApplicationMessageMetadata	
+<<LADR_Application>> LadrApplicationMessageMetadata	
+LadrApplicationMessageMetadata : + timestamp [1] DateTimeUtc	
+class LadrApplicationMessageType	
+<<LADR_Application>> LadrApplicationMessageType	
+LadrApplicationMessageType : DISTRESS_EVENT_UPLOAD_MESSAGE	
+LadrApplicationMessageMetadata --> LadrApplicationMessageType : +type [1]	
+LadrApplicationMessage --> LadrApplicationMessageMetadata : +metadata [1]	
+class DistressEvent	
+<<LADR_Application>> DistressEvent	
+DistressEvent : + contributorCode [1] ContributorCode	
+DistressEvent : + dataSource [1] DataSource	
+DistressEvent : + adtActivationMethod [0..1] AdtActivationMethod	
 class Flight	
 <<FIXM_Core>> Flight	
 class AircraftOperator	
@@ -47,7 +55,7 @@ class SurvivalCapabilitiesExtension
 <<FIXM_Core>> SurvivalCapabilitiesExtension	
 class LadrSurvivalCapabilitiesExtension	
 <<LADR_Application>> LadrSurvivalCapabilitiesExtension	
-LadrSurvivalCapabilitiesExtension : + carriedEltHexId [0..*] CharacterString	
+LadrSurvivalCapabilitiesExtension : + carriedEltHexId [0..*] LadrEltHexId	
 SurvivalCapabilitiesExtension<|-- LadrSurvivalCapabilitiesExtension	
 SurvivalCapabilities --> SurvivalCapabilitiesExtension : +extension [0..*]	
 FlightCapabilities --> SurvivalCapabilities : +survival [0..1]	
@@ -71,7 +79,14 @@ class LastPositionReportExtension
 <<FIXM_Core>> LastPositionReportExtension	
 class LadrLastPositionReportExtension	
 <<LADR_Application>> LadrLastPositionReportExtension	
-LadrLastPositionReportExtension : + altitude [1] Altitude	
+class LadrAltitude	
+<<LADR_Application>> LadrAltitude	
+class LadrAltitudeSource	
+<<LADR_Application>> LadrAltitudeSource	
+LadrAltitudeSource : BARO	
+LadrAltitudeSource : GNSS	
+LadrAltitude --> LadrAltitudeSource : +altitudeSource [1]	
+LadrLastPositionReportExtension --> LadrAltitude : +altitude [1]	
 class Bearing	
 <<FIXM_Core>> Bearing	
 class ZeroBearingType	
@@ -80,11 +95,6 @@ ZeroBearingType : TRUE_NORTH
 ZeroBearingType : MAGNETIC_NORTH	
 Bearing --> ZeroBearingType : +zeroBearingType [1]	
 LadrLastPositionReportExtension --> Bearing : +heading [0..1]	
-class LadrAltitudeSource	
-<<LADR_Application>> LadrAltitudeSource	
-LadrAltitudeSource : BARO	
-LadrAltitudeSource : GNSS	
-LadrLastPositionReportExtension --> LadrAltitudeSource : +altitudeSource [1]	
 LadrLastPositionReportExtension : + groundSpeed [1] GroundSpeed	
 class Distance	
 <<FIXM_Core>> Distance	
@@ -98,14 +108,7 @@ class FlightIdentification
 <<FIXM_Core>> FlightIdentification	
 FlightIdentification : + aircraftIdentification [0..1] AircraftIdentification	
 Flight --> FlightIdentification : +flightIdentification [0..1]	
-LadrMessage --> Flight : +flight [1]	
-class LadrEvent	
-<<LADR_Application>> LadrEvent	
-class PersonOrOrganization	
-<<FIXM_Core>> PersonOrOrganization	
-PersonOrOrganization : + identifier [1] CharacterString	
-LadrEvent --> PersonOrOrganization : +contributorCode [1]	
-LadrEvent : + dataSource [1] CharacterString	
-LadrEvent : + adtActivationMethod [0..1] CharacterString	
-LadrMessage --> LadrEvent : +ladrEvent [1]	
-```
+DistressEvent --> Flight : +flight [1]	
+LadrApplicationMessage --> DistressEvent : +distressEvent [1]	
+```	
+

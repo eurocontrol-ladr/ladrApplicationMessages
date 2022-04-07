@@ -10,7 +10,7 @@
 	<ladr:distressEvent>
      	<!--TO BE DISCUSSED :  expected format of contributorCode. Doc 10150 says the field is a 3 NUMERIC character. But in some XML samples, the field was set to USMCC, which would not validate.-->
 		<ladr:contributorCode>001</ladr:contributorCode>
-	    <!--TO BE DISCUSSED :  expected format of dateSource. Doc 10150 says the field is a 6 ALPHANUMERIC character. But in some XML samples, the field was set to SPMCC, which would not validate.-->
+	    <!--TO BE DISCUSSED :  expected format of dataSource. Doc 10150 says the field is a 6 ALPHANUMERIC character. But in some XML samples, the field was set to SPMCC, which would not validate.-->
 		<ladr:dataSource>SPMCC</ladr:dataSource>
 		<!--TO BE DISCUSSED :  expected format of adtActivationMethod. Doc 10150 says the field is a 6 ALPHANUMERIC character, with examples all involving 6 numeric characters only (e.g. 431401). But in some XML samples, the field was either set to MANUAL or AUTOMATIC-A.-->		
 		<ladr:adtActivationMethod>MANUAL</ladr:adtActivationMethod>

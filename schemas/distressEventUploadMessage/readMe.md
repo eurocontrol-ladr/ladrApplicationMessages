@@ -27,6 +27,7 @@ class LadrApplicationMessageType
 <<LADR_Application>> LadrApplicationMessageType	
 LadrApplicationMessageType : DISTRESS_EVENT_UPLOAD_MESSAGE	
 LadrApplicationMessageMetadata --> LadrApplicationMessageType : +type [1]	
+LadrApplicationMessageMetadata : + identifier [1] UniversallyUniqueIdentifier	
 LadrApplicationMessage --> LadrApplicationMessageMetadata : +metadata [1]	
 class DistressEvent	
 <<LADR_Application>> DistressEvent	
@@ -111,5 +112,6 @@ Flight --> FlightIdentification : +flightIdentification [0..1]
 DistressEvent --> Flight : +flight [1]	
 LadrApplicationMessage --> DistressEvent : +distressEvent [1]	
 ```	
+
 
 

@@ -16,30 +16,32 @@
     User->>LADR: Distress Event Validation Message
 ```
 
-```mermaid
-classDiagram
-class LadrMessage	
-<<LADR_Application>> LadrMessage	
-LadrMessage : + timestamp [1] Time	
-class LadrMessageType	
-<<LADR_Application>> LadrMessageType	
-LadrMessageType : LADR_EVENT_UPLOAD_VALIDATION_MESSAGE	
-LadrMessageType <-- LadrMessage : +type [1]	
-LadrMessage : + receiptTime [1] Time	
-class LadrEvent	
-<<LADR_Application>> LadrEvent	
-class PersonOrOrganization	
-<<FIXM_Core>> PersonOrOrganization	
-PersonOrOrganization : + identifier [1] CharacterString	
-LadrEvent --> PersonOrOrganization : +contributorCode [1]	
-LadrEvent : + identifier [1] UniversallyUniqueIdentifier	
-LadrMessage --> LadrEvent : +ladrEvent [1]	
-class LadrMessageValidationStatus	
-<<LADR_Application>> LadrMessageValidationStatus	
-LadrMessageValidationStatus : NOT_VALID	
-LadrMessageValidationStatus : VALID	
-LadrMessage --> LadrMessageValidationStatus : +messageValidationStatus [1]	
-LadrMessage : + uploadMessageValidatedTime [0..1] Time	
-LadrMessage : + messageLoggedAsUnvalidTime [0..1] Time	
-LadrMessage : + referencedMessageIdentifier [1] UniversallyUniqueIdentifier	
-```
+```mermaid	
+classDiagram	
+class LadrApplicationMessage	
+<<LADR_Application>> LadrApplicationMessage	
+class LadrApplicationMessageMetadata	
+<<LADR_Application>> LadrApplicationMessageMetadata	
+LadrApplicationMessageMetadata : + timestamp [1] DateTimeUtc	
+class LadrApplicationMessageType	
+<<LADR_Application>> LadrApplicationMessageType	
+LadrApplicationMessageType : DISTRESS_EVENT_UPLOAD_VALIDATION_MESSAGE	
+LadrApplicationMessageMetadata --> LadrApplicationMessageType : +type [1]	
+LadrApplicationMessageMetadata : + identifier [1] UniversallyUniqueIdentifier	
+LadrApplicationMessageMetadata : + receiptTime [1] DateTimeUtc	
+class LadrApplicationMessageValidationStatus	
+<<LADR_Application>> LadrApplicationMessageValidationStatus	
+LadrApplicationMessageValidationStatus : NOT_VALID	
+LadrApplicationMessageValidationStatus : VALID	
+LadrApplicationMessageMetadata --> LadrApplicationMessageValidationStatus : +validationStatus [1]	
+LadrApplicationMessageMetadata : + tval [1] DateTimeUtc	
+LadrApplicationMessageMetadata : + referencedMessageIdentifier [1] UniversallyUniqueIdentifier	
+LadrApplicationMessageMetadata : + tunv [1] DateTimeUtc	
+LadrApplicationMessage --> LadrApplicationMessageMetadata : +metadata [1]	
+class DistressEvent	
+<<LADR_Application>> DistressEvent	
+DistressEvent : + contributorCode [0..1] ContributorCode	
+DistressEvent : + identifier [0..1] UniversallyUniqueIdentifier	
+LadrApplicationMessage --> DistressEvent : +distressEvent [0..1]	
+```	
+

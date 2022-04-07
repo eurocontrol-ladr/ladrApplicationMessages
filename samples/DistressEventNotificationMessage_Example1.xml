@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ladr:LadrMessage xmlns:ladr="http://www.eurocontrol.int/nm/fixm/app/ladr/1.0" xmlns:fx="http://www.fixm.aero/flight/4.2" xmlns:fb="http://www.fixm.aero/base/4.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eurocontrol.int/nm/fixm/app/ladr/1.0 ..\schemas\\ladrEventNotificationMessage\\ladrmessage\LadrMessage.xsd">
-	<ladr:timestamp>2022-01-19T06:00:20Z</ladr:timestamp>
-	<ladr:type>LADR_EVENT_NOTIFICATION_MESSAGE</ladr:type>
-	<ladr:ladrEvent>
-		<ladr:identifier codeSpace="urn:uuid">a5e688eb-384a-4229-97b6-c29d39bf9069</ladr:identifier>
-		<ladr:eventIssuedTime>2022-01-19T06:00:19Z</ladr:eventIssuedTime>
-	</ladr:ladrEvent>
-</ladr:LadrMessage>

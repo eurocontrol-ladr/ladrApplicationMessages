@@ -201,9 +201,48 @@ What would be the right pattern for this field: TTTTTT, NNNNNN, a mix... ? Any n
 
 ## Time at position
 
-> TODO
+### Requirement
+ICAO Doc10150 includes the mandatory data element “Date and Time of transmission”.
+
+This data is expected to be provided by the contributor on input to the LADR.
+
+### To be discussed
+Some samples of LADR input data provide a “timeAtPosition” element but this one has no counterpart in the Doc10150 data elements. In FIXM time at a position is part of the 4D point and technically is not the transmission time. The preferred approach would be to disambiguate this to avoid a semantic drift. 
+
+#### Initial feed-back:
+
+According to A.002, there are three times associated with a LADR message:
+
+LADR Reception Time (when the LADR receive the message)
+Alert Detection Time (MF#14 or MF#14b)
+Transmission Time to the LADR
+The time that uses the tag <fx:timeAtPosition> seems to be the time defined as bcnTranDateTime at C/S A.002 Table C.6, as it coincides with the TCA or Detect Time. 
+
+### Resolution
+TODO
 
 ---
+
+## Time of receipt
+### Requirement
+ICAO Doc10150 includes the mandatory data element “Date and Time of receipt”.
+
+This data is expected to be provided by the LADR on message reception.
+
+### To be discussed
+Some samples of LADR input data include “date and time of receipt” element which is unexpected unless this means something else (eg time of receipt by the MCC)
+
+#### Initial feed-back
+
+According to A.002, there are three times associated with a LADR message:
+
+LADR Reception Time (when the LADR receive the message)
+Alert Detection Time (MF#14 or MF#14b)
+Transmission Time to the LADR
+ The time that uses the tag <ladr:timestamp>, theory it should be the time defined as messageDateTime at C/S A.002, as the time at which the MCC sends the message to the LADR, but it seems to coincide with the time at which the message was received from the LUT. However, it is not clear to us that a tag starting with “ladr:“ the MCC has to write something, because it seems a tag oriented to be written by the LADR.
+
+### Resolution
+TODO
 
 ## Message temporality
 

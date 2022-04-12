@@ -217,7 +217,7 @@ Some samples of LADR input data provide a “timeAtPosition” element but this 
 The time that uses the tag <fx:timeAtPosition> seems to be the time defined as bcnTranDateTime at C/S A.002 Table C.6, as it coincides with the TCA or Detect Time. 
 
 ### Resolution
-TO BE DONE
+TODO
 
 ---
 
@@ -239,5 +239,5 @@ According to A.002, there are three times associated with a LADR message:
 The time that uses the tag <ladr:timestamp>, theory it should be the time defined as messageDateTime at C/S A.002, as the time at which the MCC sends the message to the LADR, but it seems to coincide with the time at which the message was received from the LUT. However, it is not clear to us that a tag starting with “ladr:“ the MCC has to write something, because it seems a tag oriented to be written by the LADR.
 
 ### Resolution
-TO BE DONE
+TODO
 

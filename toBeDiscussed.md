@@ -230,7 +230,7 @@ This data is expected to be provided by the LADR on message reception.
 ### To be discussed
 Some samples of LADR input data include “date and time of receipt” element which is unexpected unless this means something else (eg time of receipt by the MCC)
 
-### Initial feed-back
+#### Initial feed-back
 According to A.002, there are three times associated with a LADR message:
 •	LADR Reception Time (when the LADR receive the message)
 •	Alert Detection Time (MF#14 or MF#14b)

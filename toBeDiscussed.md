@@ -241,8 +241,3 @@ The time that uses the tag <ladr:timestamp>, theory it should be the time define
 ### Resolution
 TO BE DONE
 
----
-
-## Message temporality
-
-> TODO

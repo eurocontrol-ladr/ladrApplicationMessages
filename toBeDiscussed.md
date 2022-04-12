@@ -171,24 +171,24 @@ Looking at the examples provided by Doc 10150, should the format rather be NNNNN
 |401300|
 
 In some prototype's samples, 
-- Data source is sometimes set to `MANUAL`. This value matches the pattern, but is this truly a value that is expected/allowed?
+- ADT Activation Method is sometimes set to `MANUAL`. This value matches the pattern, but is this truly a value that is expected/allowed?
 
 ```xml
 <ladr:LadrMessage>
   <ladr:flight>
     <fx:emergency>
       <ladr:dataSource>SPMCC</ladr:dataSource>
-       <ladr:ADTActivationMethod>MANUAL</ladr:ADTActivationMethod>
+      <ladr:ADTActivationMethod>MANUAL</ladr:ADTActivationMethod>
 ```
 
-- Data source is sometimes set to `AUTOMATIC-A`. This value does not match the pattern / does not validate.
+- ADT Activation Method is sometimes set to `AUTOMATIC-A`. This value does not match the pattern / does not validate.
 
 ```xml
 <ladr:LadrMessage>
   <ladr:flight>
     <fx:emergency>
       <ladr:dataSource>SPMCC</ladr:dataSource>
-       <ladr:ADTActivationMethod>AUTOMATIC-A</ladr:ADTActivationMethod>
+      <ladr:ADTActivationMethod>AUTOMATIC-A</ladr:ADTActivationMethod>
 ```
 
 What would be the right pattern for this field: TTTTTT, NNNNNN, a mix... ? Any need for predefined values?

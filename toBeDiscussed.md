@@ -248,9 +248,10 @@ TODO
 ### To be discussed
 An alphanumeric text string pertaining to the specific ADT device activated.  For ELT(DT)s this would be a hexadecimal entry of length 15 or 23 characters (FGB and SGB respectively), but could be limited to 15 characters if preferable.  Not only is this a critical element in the C/S arena, it is the identifier often used by RCCs and links to registration databases with additional owner/beacon information.  
 
-### Clarification: difference with “data source” and “Emergency locator transmitter (ELT) Hex ID” from Doc10150 ?
+### Clarification: 
+Difference with “data source” and “Emergency locator transmitter (ELT) Hex ID” from Doc10150 ?
 
-### Resolution
+### Resolution:
 TODO
 
 ---

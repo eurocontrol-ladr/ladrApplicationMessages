@@ -286,7 +286,8 @@ Overall approach to be discussed: data element? / part of upload message? / need
 ## Data completeness handling: 
 
 ### To be discussed: 
-Overall approach to handling mandatory versus optional data elements in relation to LADR validation and logging.
+Confirmation of the approach to handle mandatory versus optional data elements in relation to LADR validation and logging:
+all mandatory fields need to be provided and cannot be nilled.
 
 ### Resolution:
 > TODO

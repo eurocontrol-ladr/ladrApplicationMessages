@@ -198,7 +198,7 @@ In some prototype's samples,
       <ladr:ADTActivationMethod>AUTOMATIC-A</ladr:ADTActivationMethod>
 ```
 
-What would be the right pattern for this field: TTTTTT, NNNNNN, a mix... ? Any need for predefined values?
+What would be the right pattern for this field: TTTTTT, NNNNNN, a mix... ? Any need for predefined values? This then should/could be a codelist(s) to be defined for harmonisation purposes?
 
 ### Resolution
 

@@ -61,6 +61,7 @@ and the corresponding distress event upload validation message informing about t
 ### Resolution
 
 > TODO
+
 28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
@@ -102,6 +103,7 @@ Note: In principle, EUROCONTROL will foresee a process to connect contributors t
 ### Resolution
 
 > TODO
+
 28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
@@ -140,6 +142,7 @@ What would be the right pattern for this field?
 ### Resolution
 
 > TODO
+
 28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
@@ -199,6 +202,7 @@ What would be the right pattern for this field: TTTTTT, NNNNNN, a mix... ? Any n
 ### Resolution
 
 > TODO
+
 28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
@@ -222,6 +226,7 @@ The time that uses the tag <fx:timeAtPosition> seems to be the time defined as b
 
 ### Resolution
 > TODO
+
 28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
@@ -245,6 +250,7 @@ The time that uses the tag <ladr:timestamp>, theory it should be the time define
 
 ### Resolution
 > TODO
+
 28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
@@ -259,6 +265,7 @@ Difference with “data source” and “Emergency locator transmitter (ELT) Hex
 
 ### Resolution:
 > TODO
+
 28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
@@ -270,6 +277,7 @@ Overall approach to be discussed: data element? / part of upload message? / need
 
 ### Resolution:
 > TODO
+
 28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
@@ -281,4 +289,5 @@ Overall approach to handling mandatory versus optional data elements in relation
 
 ### Resolution:
 > TODO
+
 28/04/2022: LADR FIXM message development – meeting #2:

@@ -97,8 +97,9 @@ In some prototype's samples, Contributor Code is sometimes set to `USMCC`. This 
 
 What would be the right pattern for this field? Should this code be normalized?
 
-Note: In principle, EUROCONTROL will foresee a process to connect contributors to the LADR.
+In principle, EUROCONTROL will foresee a process to connect contributors to the LADR.
 
+How is the contributor code managed? Is it provided by ICAO, the LADR or by the contributors? When provided by the LADR it could be part of the connection process to the LADR. But it could also be a list of codes provided by ICAO (similar to Doc 8585). From a LADR point of view it needs to be an identifier of the contributing organisation  enabling to lookup specific data associated to the contributor such as ADT activitation methods.
 
 ### Resolution
 

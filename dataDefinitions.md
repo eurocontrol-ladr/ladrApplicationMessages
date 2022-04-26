@@ -1,7 +1,7 @@
 ## Definitions
 
 | Model Element | Description |	
-| :---     | :----     |
+| :-  | :-------------------- |
 | DistressEvent.**adtActivationMethod** | `DESCRIPTION`<br>A defined code which indicates if the activation was manual or automatic, and what parameter exceedance triggered the automatic activation, if applicable. The code also incorporates cancellation information to indicate when the ADT system no longer transmits due to the activating condition no longer being fulfilled. |
 | DistressEvent.**contributorCode** | `DESCRIPTION`<br>A code identifying [the LADR contributor ???], which enables to establish contributor domain for data validation. |
 | DistressEvent.**dataSource** | `DESCRIPTION`<br>A code enabling the identification of the source of the autonomous distress tracking data. |

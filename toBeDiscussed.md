@@ -61,6 +61,7 @@ and the corresponding distress event upload validation message informing about t
 ### Resolution
 
 > TODO
+28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
 
@@ -101,6 +102,7 @@ Note: In principle, EUROCONTROL will foresee a process to connect contributors t
 ### Resolution
 
 > TODO
+28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
 
@@ -138,6 +140,7 @@ What would be the right pattern for this field?
 ### Resolution
 
 > TODO
+28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
 
@@ -196,6 +199,7 @@ What would be the right pattern for this field: TTTTTT, NNNNNN, a mix... ? Any n
 ### Resolution
 
 > TODO
+28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
 
@@ -217,7 +221,8 @@ Some samples of LADR input data provide a “timeAtPosition” element but this 
 The time that uses the tag <fx:timeAtPosition> seems to be the time defined as bcnTranDateTime at C/S A.002 Table C.6, as it coincides with the TCA or Detect Time. 
 
 ### Resolution
-TODO
+> TODO
+28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
 
@@ -239,7 +244,8 @@ According to A.002, there are three times associated with a LADR message:
 The time that uses the tag <ladr:timestamp>, theory it should be the time defined as messageDateTime at C/S A.002, as the time at which the MCC sends the message to the LADR, but it seems to coincide with the time at which the message was received from the LUT. However, it is not clear to us that a tag starting with “ladr:“ the MCC has to write something, because it seems a tag oriented to be written by the LADR.
 
 ### Resolution
-TODO
+> TODO
+28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
 
@@ -252,7 +258,8 @@ An alphanumeric text string pertaining to the specific ADT device activated.  Fo
 Difference with “data source” and “Emergency locator transmitter (ELT) Hex ID” from Doc10150 ?
 
 ### Resolution:
-TODO
+> TODO
+28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
 
@@ -262,7 +269,8 @@ TODO
 Overall approach to be discussed: data element? / part of upload message? / needed in the beginning?
 
 ### Resolution:
-TODO
+> TODO
+28/04/2022: LADR FIXM message development – meeting #2:
 
 ---
 
@@ -272,4 +280,5 @@ TODO
 Overall approach to handling mandatory versus optional data elements in relation to LADR validation and logging.
 
 ### Resolution:
-TODO
+> TODO
+28/04/2022: LADR FIXM message development – meeting #2:

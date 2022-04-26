@@ -114,7 +114,7 @@ Note: In principle, EUROCONTROL will foresee a process to connect contributors t
 
 |Field|Format|LADR functionality|Example|
 |:-|:-|:-|:-|
-|Data source|TTTTTT|Enable identification of the source of data (manufacturerm type of ADT)| GCP-01 |
+|Data source|TTTTTT|Enable identification of the source of data (manufacturer, type of ADT)| GCP-01 |
 
 The pattern TTTTTT is currently enforced in the LADR schemas as follows.
 

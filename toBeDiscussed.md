@@ -162,6 +162,8 @@ What would be the right pattern for this field?
 
 28/04/2022: LADR FIXM message development – meeting #2:
 - consider renaming the property to `typeOfAdt` - possible values: `ELT-DT`, `...` 
+- if `ELT-DT` is provided, then the hexID shall perhaps be provided - TBC
+- Ian will check with manufacturers what other values could be exchanged
 ---
 
 ## ADT activation method

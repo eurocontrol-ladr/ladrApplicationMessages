@@ -164,6 +164,7 @@ What would be the right pattern for this field?
 - consider renaming the property to `typeOfAdt` - possible values: `ELT-DT`, `...` 
 - if `ELT-DT` is provided, then the hexID shall perhaps be provided => could be a business rule checked by LADR - TBC
 - Ian will check with manufacturers what other values could be exchanged.
+- Would there be a need to exchange as well the manufacturer of the ELT-DT?
 ---
 
 ## ADT activation method

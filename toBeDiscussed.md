@@ -77,6 +77,8 @@ and the corresponding distress event upload validation message informing about t
 - Security of the off-the-shelf libraries dealing with UUID generation need to be carefully assessed
 - Usual programming languages (C#, .Net, Java, ...) have these libraries
 - There could be other message identification schemes that could be envisaged such a message id involving e.g. "MCC name + message number + timestamp"
+- For now, keep UUID as the way forward. Action on LADR contributors to crosscheck the feasibility of the proposal, and to propose alternatives should the UUID prove unsatisfactory.
+- 
 ---
 
 ## Contributor Code    

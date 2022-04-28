@@ -8,7 +8,18 @@ ICAO doc 10150 does not require the messages sent to or from LADR to have an ide
 
 Note: The ICAO FF-ICE concept has a requirement along these lines.
 
+### At which level should message identification be captured?
+
+Message identification is on a borderline between the information layer and the technical infrastructure layer, and different aspects need to be considered for dealing with the question, such as the following:
+
+- Messaging protocols come with their native model for serialised messages which commonly defines message identification structures. See for instance AMQP 1.0 message model at http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-messaging-v1.0-os.html#section-message-format . Message identification may be therefore supported natively by the selected messaging protocol that will support the exchanges. On the other hand, messaging protocols may define an internal logic whereby the information being sent is actually split in pieces and exchanged using multiple serialised messages. In this case, the message identification scheme of the protocol protocol may not be fit for purpose for identifiying an application message.
+- The type of message exchange pattern being considered. If a synchronous R/R pattern is considered, the reply is always de facto correlated with the request. In this case, there may be no need to specify a means to cross-reference application messages.
+- ...
+
+
 ### To be discussed
+
+> Assuming the message identification is supported at the level of the LADR Application Message... 
 
 In some prototype's samples, some LADR messages had a message number, expressed as an unsigned integer. It is understood that this field corresponds to the field MESSAGE NUMBER as standardised in the MCC standard interface. As LADR will centralise DistressEventUplaodMessages sent from multiple accredited LADR contributors, the risk exists of potential collisions between message identifiers sent by different sources (for instance two distinct LADR contributors using the same value "12345" for identifying to two distinct messages sent to the LADR). 
 
@@ -18,7 +29,7 @@ The ISO/IEC 9834 is already used in an Aviation/ATM context, with AIXM and FIXM 
 
 An example of UUID v4 reads as follows: `282123e9-958a-4e99-a007-a0d838a148f0`
 
-Off-the-shelf libraries exist that support the generation of UUID v4. Online UUID v4 generation services also exist that can be leveraged (e.g. https://www.uuidgenerator.net/version4).
+Off-the-shelf libraries exist that support the generation of UUID v4. Online UUID v4 generation services also exist that can be leveraged (an example can be found at https://www.uuidgenerator.net/version4).
 
 It is proposed to reuse UUID v4 for identifying LADR messages. In the current LADR schemas, this is represented as follows:
 

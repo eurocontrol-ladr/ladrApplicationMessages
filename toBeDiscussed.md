@@ -276,7 +276,8 @@ The time that uses the tag <ladr:timestamp>, theory it should be the time define
 > TODO
 
 28/04/2022: LADR FIXM message development – meeting #2:
-
+- this is the time the LADR picked this info up
+- no need to exchange the info on input to LADR => will not be part of the the DistressEventUploadMessage
 ---
 
 ## Device Identifier: 

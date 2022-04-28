@@ -121,7 +121,8 @@ How is the contributor code managed? Is it provided by ICAO, the LADR or by the 
 > TODO
 
 28/04/2022: LADR FIXM message development – meeting #2:
-
+- the contributor codes could be assigned by ICAO once accreditation is confirmed - similar to Doc 8585 approach
+- 
 ---
 
 ## Data source

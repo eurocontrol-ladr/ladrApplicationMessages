@@ -251,7 +251,7 @@ The time that uses the tag <fx:timeAtPosition> seems to be the time defined as b
 
 28/04/2022: LADR FIXM message development – meeting #2:
 - what is wanted is the position of the aircraft and the time at which the aircraft was at the position
-- rename the data element accordingly
+- this means that the fixm property can be rightfully reused
 
 ---
 

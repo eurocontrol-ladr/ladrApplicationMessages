@@ -224,6 +224,8 @@ What would be the right pattern for this field: TTTTTT, NNNNNN, a mix... ? Any n
 > TODO
 
 28/04/2022: LADR FIXM message development – meeting #2:
+- probably formed of six numbers
+- no need to standardise. Look-up tables would be made available by contributors to enable the interpretation of the code.
 
 ---
 

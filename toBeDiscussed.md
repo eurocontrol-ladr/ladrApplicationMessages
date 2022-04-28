@@ -74,7 +74,8 @@ and the corresponding distress event upload validation message informing about t
 > TODO
 
 28/04/2022: LADR FIXM message development – meeting #2:
-
+- Security of the off-the-shelf libraries dealing with UUID generation need to be carefully assessed
+- Usual programming languages (C#, .Net, Java, ...) have these libraries
 ---
 
 ## Contributor Code    

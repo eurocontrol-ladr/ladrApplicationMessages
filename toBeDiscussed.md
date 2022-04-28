@@ -318,3 +318,5 @@ all mandatory fields need to be provided and cannot be nilled.
 > TODO
 
 28/04/2022: LADR FIXM message development – meeting #2:
+- There is a possibility that the data declared mandatory is actually not available because the beacon goes off. A schema that is too restrictive would make it impossible fot the LADR message to be sent. 
+- Current way forward: elements can not be nilled. This may be reconsidered as appropriate if the point above needs attention. Should nillability be restored, use cases for it should be carefully described and mutually agreed on.

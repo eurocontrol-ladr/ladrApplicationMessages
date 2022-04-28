@@ -161,7 +161,7 @@ What would be the right pattern for this field?
 > TODO
 
 28/04/2022: LADR FIXM message development – meeting #2:
-- consider renaming the property to `typeOfEdt` - possible values: `ELT-DT`, `...` 
+- consider renaming the property to `typeOfAdt` - possible values: `ELT-DT`, `...` 
 ---
 
 ## ADT activation method

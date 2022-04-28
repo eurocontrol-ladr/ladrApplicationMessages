@@ -292,6 +292,7 @@ Difference with “data source” and “Emergency locator transmitter (ELT) Hex
 > TODO
 
 28/04/2022: LADR FIXM message development – meeting #2:
+- allow property carriedELDHexId to be either 15 or 23 characters
 
 ---
 

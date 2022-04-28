@@ -305,7 +305,7 @@ Overall approach to be discussed: data element? / part of upload message? / need
 > TODO
 
 28/04/2022: LADR FIXM message development – meeting #2:
-
+- The cancellation of distress by a LADR Contributor is expected to be an aspect covered by the `ADT Activation Method`. 
 ---
 
 ## Data completeness handling: 

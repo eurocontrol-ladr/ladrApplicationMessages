@@ -292,8 +292,8 @@ Difference with “data source” and “Emergency locator transmitter (ELT) Hex
 > TODO
 
 28/04/2022: LADR FIXM message development – meeting #2:
-- allow property carriedELDHexId to be either 15 or 23 characters
-
+- allow property `carriedELDHexId` to be either 15 or 23 characters
+- From a LADR perspective, there is for now no need to get two fields covering both legacy ELT and new ELT-DT. Only the hexId of the ELT-DT that has generated the position info is wanted.
 ---
 
 ## Cancelation of distress:

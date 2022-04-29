@@ -116,11 +116,9 @@ How is the contributor code managed? Is it provided by ICAO, the LADR or by the 
 
 ### Resolution
 
-> TODO
-
-28/04/2022: LADR FIXM message development – meeting #2:
+**28/04/2022: LADR FIXM message development – meeting #2:**
 - the contributor codes could be assigned by ICAO once accreditation is confirmed - similar to Doc 8585 approach
-- 
+
 ---
 
 ## Data source
@@ -163,8 +161,8 @@ What would be the right pattern for this field?
 - Would there be a need to exchange as well the manufacturer of the ELT-DT?
 
 **Envisaged changes to the schemas following meeting on 28/04**
-- Property DistressEvent.dataSource is renamed to DistressEvent.typeOfAdt
-- Datatype DataSourceType renamed to TypeOfAdtChoiceType, and modelled as a choice between a set of predefined enumerated values (ELT-DT, or possibly other values => ref action on Ian) or free text. 
+- Property DistressEvent.dataSource is renamed to `DistressEvent.typeOfAdt`
+- Datatype DataSourceType renamed to `TypeOfAdtChoiceType`, and modelled as a choice between a set of predefined enumerated values (ELT-DT, or possibly other values => ref action on Ian) or free text. 
 
 ```xml
 <xs:complexType name="DistressEventType">
@@ -253,12 +251,20 @@ What would be the right pattern for this field: TTTTTT, NNNNNN, a mix... ? Any n
 
 ### Resolution
 
-> TODO
-
 28/04/2022: LADR FIXM message development – meeting #2:
 - probably formed of six numbers
 - no need to standardise. Look-up tables would be made available by contributors to enable the interpretation of the code.
 
+**Envisaged changes to the schemas following meeting on 28/04**
+- The pattern of type `AdtActivationMethodType` is changed to `([0-9]){6}` 
+
+```xml
+<xs:simpleType name="AdtActivationMethodType">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="([0-9]){6}"/>
+  </xs:restriction>
+</xs:simpleType>
+```
 ---
 
 ## Time at position

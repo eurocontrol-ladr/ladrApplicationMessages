@@ -167,8 +167,8 @@ What would be the right pattern for this field?
 - Would there be a need to exchange as well the manufacturer of the ELT-DT?
 
 **Envisaged changes to the schemas following meeting on 28/04**
-- Property DistressEvent.dataSource is renamed to `DistressEvent.typeOfAdt`
-- Datatype DataSourceType renamed to `TypeOfAdtChoiceType`, and modelled as a choice between a set of predefined enumerated values (ELT-DT, or possibly other values => ref action on Ian) or free text. 
+- Property DistressEvent.dataSource to be renamed to `DistressEvent.typeOfAdt`
+- Datatype DataSourceType to be renamed to `TypeOfAdtChoiceType`, and modelled as a choice between a set of predefined enumerated values (ELT-DT, or possibly other values => ref action on Ian) or free text.
 
 ```xml
 <xs:complexType name="DistressEventType">
@@ -262,7 +262,7 @@ What would be the right pattern for this field: TTTTTT, NNNNNN, a mix... ? Any n
 - no need to standardise. Look-up tables would be made available by contributors to enable the interpretation of the code.
 
 **Envisaged changes to the schemas following meeting on 28/04**
-- The pattern of type `AdtActivationMethodType` is changed to `([0-9]){6}` 
+- The pattern of type `AdtActivationMethodType` to be changed to `([0-9]){6}` 
 
 ```xml
 <xs:simpleType name="AdtActivationMethodType">
@@ -344,7 +344,7 @@ Difference with “data source” and “Emergency locator transmitter (ELT) Hex
 - From a LADR perspective, there is for now no need to get two fields covering both legacy ELT and new ELT-DT. Only the hexId of the ELT-DT that has generated the position info is wanted.
 
 **Envisaged changes to the schemas following meeting on 28/04**
-- The pattern of type `LadrEltHexIdType` is changed to `([A-Z]|[0-9]){15}|([A-Z]|[0-9]){23}` 
+- The pattern of type `LadrEltHexIdType` is to be changed to `([A-Z]|[0-9]){15}|([A-Z]|[0-9]){23}` 
 
 ```xml
 <xs:simpleType name="LadrEltHexIdType">

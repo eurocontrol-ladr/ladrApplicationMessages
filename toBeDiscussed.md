@@ -71,14 +71,12 @@ and the corresponding distress event upload validation message informing about t
 
 ### Resolution
 
-> TODO
-
-28/04/2022: LADR FIXM message development – meeting #2:
+**28/04/2022: LADR FIXM message development – meeting #2:**
 - Security of the off-the-shelf libraries dealing with UUID generation need to be carefully assessed
 - Usual programming languages (C#, .Net, Java, ...) have these libraries
 - There could be other message identification schemes that could be envisaged such a message id involving e.g. "MCC name + message number + timestamp"
 - For now, keep UUID as the way forward. Action on LADR contributors to crosscheck the feasibility of the proposal, and to propose alternatives should the UUID prove unsatisfactory.
-- 
+
 ---
 
 ## Contributor Code    
@@ -158,13 +156,47 @@ What would be the right pattern for this field?
 
 ### Resolution
 
-> TODO
-
-28/04/2022: LADR FIXM message development – meeting #2:
+**28/04/2022: LADR FIXM message development – meeting #2:**
 - consider renaming the property to `typeOfAdt` - possible values: `ELT-DT`, `...` 
 - if `ELT-DT` is provided, then the hexID shall perhaps be provided => could be a business rule checked by LADR - TBC
 - Ian will check with manufacturers what other values could be exchanged.
 - Would there be a need to exchange as well the manufacturer of the ELT-DT?
+
+**Envisaged changes to the schemas following meeting on 28/04**
+- Property DistressEvent.dataSource is renamed to DistressEvent.typeOfAdt
+- Datatype DataSourceType renamed to TypeOfAdtChoiceType, and modelled as a choice between a set of predefined enumerated values (ELT-DT, or possibly other values => ref action on Ian) or free text. 
+
+```xml
+<xs:complexType name="DistressEventType">
+  <!-- ... -->
+  <xs:element name="typeOfAdt" type="ladr:TypeOfAdtChoiceType"/>	
+  <!-- ... -->
+</xs:complexType>
+
+<xs:complexType name="TypeOfAdtChoiceType">
+  <xs:choice>
+    <xs:element name="type" type="ladr:TypeOfAdtType"/>
+    <xs:element name="other" type="xs:string"/>
+  </xs:choice>
+<xs:complexType>
+	
+<xs:simpleType name="TypeOfAdtType">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="ELT-DT"/>
+    <xs:enumeration value="..."/>
+  </xs:restriction>
+</xs:simpleType>
+```
+
+An example of resulting XML encoding would look like this:
+
+```xml
+<ladr:distressEvent>
+  <ladr:typeOfAdt>
+    <ladr:type>ELT-DT</ladr:type>
+  </ladr:typeOfAdt>
+  <!-- ... -->	
+```
 ---
 
 ## ADT activation method

@@ -1,5 +1,9 @@
 # Topics to be discussed
 
+### Editorial note
+
+The topics listed include a record of discussions potential changes to the message schemas. These changes will be implemented at a later stage. Once implemented Eurocontrol will notify. As a consequence the current schemas do not reflect the potential changes mentioned.
+
 ## Message identifier
 
 ### Requirement

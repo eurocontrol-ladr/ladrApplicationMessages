@@ -77,6 +77,9 @@ and the corresponding distress event upload validation message informing about t
 - There could be other message identification schemes that could be envisaged such a message id involving e.g. "MCC name + message number + timestamp"
 - For now, keep UUID as the way forward. Action on LADR contributors to crosscheck the feasibility of the proposal, and to propose alternatives should the UUID prove unsatisfactory.
 
+**Envisaged changes to the schemas following meeting on 28/04**
+- no change
+
 ---
 
 ## Contributor Code    
@@ -118,6 +121,9 @@ How is the contributor code managed? Is it provided by ICAO, the LADR or by the 
 
 **28/04/2022: LADR FIXM message development – meeting #2:**
 - the contributor codes could be assigned by ICAO once accreditation is confirmed - similar to Doc 8585 approach
+
+**Envisaged changes to the schemas following meeting on 28/04**
+- no change
 
 ---
 

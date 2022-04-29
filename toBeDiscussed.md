@@ -285,11 +285,13 @@ Some samples of LADR input data provide a “timeAtPosition” element but this 
 The time that uses the tag <fx:timeAtPosition> seems to be the time defined as bcnTranDateTime at C/S A.002 Table C.6, as it coincides with the TCA or Detect Time. 
 
 ### Resolution
-> TODO
 
-28/04/2022: LADR FIXM message development – meeting #2:
+**28/04/2022: LADR FIXM message development – meeting #2:**
 - what is wanted is the position of the aircraft and the time at which the aircraft was at the position
 - this means that the fixm property can be rightfully reused
+
+**Envisaged changes to the schemas following meeting on 28/04**
+- The restricted subset of FIXM CORE defined in for the DistressEventUploadMessage will include FIXM CORE property `fx:LastPositionReportType.timeAtPosition` 
 
 ---
 
@@ -311,11 +313,14 @@ According to A.002, there are three times associated with a LADR message:
 The time that uses the tag <ladr:timestamp>, theory it should be the time defined as messageDateTime at C/S A.002, as the time at which the MCC sends the message to the LADR, but it seems to coincide with the time at which the message was received from the LUT. However, it is not clear to us that a tag starting with “ladr:“ the MCC has to write something, because it seems a tag oriented to be written by the LADR.
 
 ### Resolution
-> TODO
 
-28/04/2022: LADR FIXM message development – meeting #2:
+**28/04/2022: LADR FIXM message development – meeting #2:**
 - this is the time the LADR picked this info up
 - no need to exchange the info on input to LADR => will not be part of the the DistressEventUploadMessage
+
+**Envisaged changes to the schemas following meeting on 28/04**
+- No change needed. This data element is already absent from the DistressEventUploadMessage schemas
+ 
 ---
 
 ## Device Identifier: 
@@ -327,11 +332,21 @@ An alphanumeric text string pertaining to the specific ADT device activated.  Fo
 Difference with “data source” and “Emergency locator transmitter (ELT) Hex ID” from Doc10150 ?
 
 ### Resolution:
-> TODO
 
-28/04/2022: LADR FIXM message development – meeting #2:
+**28/04/2022: LADR FIXM message development – meeting #2:**
 - allow property `carriedELDHexId` to be either 15 or 23 characters
 - From a LADR perspective, there is for now no need to get two fields covering both legacy ELT and new ELT-DT. Only the hexId of the ELT-DT that has generated the position info is wanted.
+
+**Envisaged changes to the schemas following meeting on 28/04**
+- The pattern of type `LadrEltHexIdType` is changed to `([A-Z]|[0-9]){15}|([A-Z]|[0-9]){23}` 
+
+```xml
+<xs:simpleType name="LadrEltHexIdType">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="([A-Z]|[0-9]){15}|([A-Z]|[0-9]){23}"/>
+  </xs:restriction>
+</xs:simpleType>
+```
 ---
 
 ## Cancelation of distress:
@@ -340,10 +355,13 @@ Difference with “data source” and “Emergency locator transmitter (ELT) Hex
 Overall approach to be discussed: data element? / part of upload message? / needed in the beginning?
 
 ### Resolution:
-> TODO
 
 28/04/2022: LADR FIXM message development – meeting #2:
 - The cancellation of distress by a LADR Contributor is expected to be an aspect covered by the `ADT Activation Method`. 
+
+**Envisaged changes to the schemas following meeting on 28/04**
+- no change
+
 ---
 
 ## Data completeness handling: 
@@ -353,8 +371,10 @@ Confirmation of the approach to handle mandatory versus optional data elements i
 all mandatory fields need to be provided and cannot be nilled.
 
 ### Resolution:
-> TODO
 
 28/04/2022: LADR FIXM message development – meeting #2:
 - There is a possibility that the data declared mandatory is actually not available because the beacon goes off. A schema that is too restrictive would make it impossible fot the LADR message to be sent. 
 - Current way forward: elements can not be nilled. This may be reconsidered as appropriate if the point above needs attention. Should nillability be restored, use cases for it should be carefully described and mutually agreed on.
+
+**Envisaged changes to the schemas following meeting on 28/04**
+- no change

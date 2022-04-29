@@ -297,7 +297,7 @@ The time that uses the tag <fx:timeAtPosition> seems to be the time defined as b
 - this means that the fixm property can be rightfully reused
 
 **Envisaged changes to the schemas following meeting on 28/04**
-- The restricted subset of FIXM CORE defined in for the DistressEventUploadMessage will include FIXM CORE property `fx:LastPositionReportType.timeAtPosition` 
+- The restricted subset of FIXM CORE defined for the DistressEventUploadMessage will include FIXM CORE property `fx:LastPositionReportType.timeAtPosition` 
 
 ---
 

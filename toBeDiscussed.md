@@ -400,7 +400,7 @@ Is it possible that the LADR will receive the same message multiple times? Eg wh
 - TBD
 
 **Envisaged changes to the schemas following meeting on 17/05**
-- No change.
+- TBD
 
 ---
 
@@ -415,4 +415,4 @@ When an AOC is sending LADR upload messages it could include operational validat
 - TBD
 
 **Envisaged changes to the schemas following meeting on 17/05**
-- ?
+- TBD

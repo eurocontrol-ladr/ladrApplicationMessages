@@ -386,3 +386,33 @@ all mandatory fields need to be provided and cannot be nilled.
 
 **Envisaged changes to the schemas following meeting on 28/04**
 - no change
+
+---
+
+## Same contributor sending same position multiple times: 
+
+### To be discussed: 
+Is it possible that the LADR will receive the same message multiple times? Eg when the distress event is picked up by more than one MCC?
+
+### Resolution:
+
+**17/05/2022: LADR FIXM message development – meeting #3:**
+- TBD
+
+**Envisaged changes to the schemas following meeting on 17/05**
+- No change.
+
+---
+
+## Upload message requiring operational validation information: 
+
+### To be discussed: 
+When an AOC is sending LADR upload messages it could include operational validation information? Should the information than be foreseen on upload to LADR?
+
+### Resolution:
+
+**17/05/2022: LADR FIXM message development – meeting #3:**
+- TBD
+
+**Envisaged changes to the schemas following meeting on 17/05**
+- ?

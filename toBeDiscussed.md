@@ -413,7 +413,7 @@ The LADR assumes:
 ### To be discussed: 
 When an AOC is sending LADR upload messages could it include operational validation information? Should the information than be foreseen on upload to LADR?
 
-The LADR assumes that the sending of the distres event data and the operational validation of the distress event will be done using two distinct messages: the `Distress Event Notification Message` and the `Distress Event Validation Message`. This means that no operational validation info will be provided as part of the `Distress Event Notification Message`.
+The LADR assumes that the sending of the distres event data and the operational validation of the distress event will be done using two distinct messages: the `Distress Event Upload Message` and the `Distress Event Validation Message`. This means that no operational validation info will be provided as part of the `Distress Event Upload Message`.
 
 ### Resolution:
 

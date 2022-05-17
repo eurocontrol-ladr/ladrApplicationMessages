@@ -392,7 +392,11 @@ all mandatory fields need to be provided and cannot be nilled.
 ## Same contributor sending same position multiple times: 
 
 ### To be discussed: 
-Is it possible that the LADR will receive the same message multiple times? Eg when the distress event is picked up by more than one MCC?
+Is it possible that the LADR will receive the same ADT position information (sent by one aircraft) multiple times from MCCs belonging to the same distress tracking organisation? Eg when the distress event is picked up by more than one MCC?
+
+The LADR assumes:
+- that the UUID of the messages sent by the different MCCs of the same distress tracking organisation will be different;
+- that all messages will be kept.
 
 ### Resolution:
 

@@ -203,6 +203,13 @@ An example of resulting XML encoding would look like this:
   </ladr:typeOfAdt>
   <!-- ... -->	
 ```
+
+**17/05/2022: LADR FIXM message development – meeting #3:
+- proposal to add a “VersionNumber” field.
+
+**Envisaged changes to the schemas following meeting on 17/05**
+- add data element to capture VersionNumber of ADT type in `Distress Event Upload Message`
+
 ---
 
 ## ADT activation method
@@ -273,6 +280,14 @@ What would be the right pattern for this field: TTTTTT, NNNNNN, a mix... ? Any n
   </xs:restriction>
 </xs:simpleType>
 ```
+
+17/05/2022: LADR FIXM message development – meeting #3:
+- continued discussion on need to standardise meanings of activation codes.
+- further build up resolution as part of message sample creation work
+
+**Envisaged changes to the schemas following meeting on 17/05**
+- No change
+
 ---
 
 ## Time at position

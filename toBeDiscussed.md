@@ -419,8 +419,8 @@ The LADR assumes that the sending of the distres event data and the operational 
 ### Resolution:
 
 **17/05/2022: LADR FIXM message development – meeting #3:**
-- the group confirmed the current approach in terms of separation of this information between event data uplaoding and subsequent operational validation.
-- the group confirmed that capturing "confirmationi of genuine distress event" information is not part of the `Distress Event Upload Message`
+- the group confirmed the current approach in terms of separation of this information between event data uploading and subsequent operational validation.
+- the group confirmed that capturing "confirmation of genuine distress event" information is not part of the `Distress Event Upload Message`
 
 **Envisaged changes to the schemas following meeting on 17/05**
 - no change

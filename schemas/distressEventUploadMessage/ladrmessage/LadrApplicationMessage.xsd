@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema targetNamespace="http://www.eurocontrol.int/nm/fixm/app/ladr/1.0" xmlns:ladr="http://www.eurocontrol.int/nm/fixm/app/ladr/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fx="http://www.fixm.aero/flight/4.2" xmlns:fb="http://www.fixm.aero/base/4.2" elementFormDefault="qualified" version="0.0.1">
+<xs:schema targetNamespace="http://www.eurocontrol.int/nm/fixm/app/ladr/1.0" xmlns:ladr="http://www.eurocontrol.int/nm/fixm/app/ladr/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fb="http://www.fixm.aero/base/4.2" xmlns:fx="http://www.fixm.aero/flight/4.2" elementFormDefault="qualified" version="0.0.1">
 	<xs:annotation>
 		<xs:documentation>The profile corresponding to the DistressEventUploadMessage. Copyright EUROCONTROL</xs:documentation>
 	</xs:annotation>
@@ -16,7 +16,22 @@
 			<xs:documentation>A defined code which indicates if the activation was manual or automatic, and what parameter exceedance triggered the automatic activation, if applicable. The code also incorporates cancellation information to indicate when the ADT system no longer transmits due to the activating condition no longer being fulfilled.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:pattern value="([A-Z]|[0-9]){6}"/>
+			<xs:pattern value="[0-9]{6}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AdtTypeType">
+		<xs:annotation>
+			<xs:documentation>A code describing the type of autonomous distress tracking.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ELT_DT"/>
+			<xs:enumeration value="GCP_01"/>
+			<xs:enumeration value="GCP_02"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AdtVersionType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{3}"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ContributorCodeType">
@@ -24,12 +39,10 @@
 			<xs:pattern value="([0-9]){3}"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="DataSourceType">
-		<xs:restriction base="xs:string">
-			<xs:pattern value="([A-Z]|[0-9]){6}"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="DateTimeUtcType">
+		<xs:annotation>
+			<xs:documentation>Describes instances identified by the combination of a date and a time expressed in Coordinated Universal Time (UTC) and restricted to whole second precision.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:dateTime">
 			<xs:pattern value="-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?|(24:00:00(\.0+)?))Z"/>
 		</xs:restriction>
@@ -39,7 +52,7 @@
 			<xs:documentation>Code indicating the source of the altitude.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="BARO">
+			<xs:enumeration value="BAROMETRIC">
 				<xs:annotation>
 					<xs:documentation>This value indicates that the source is Barometric.</xs:documentation>
 				</xs:annotation>
@@ -63,12 +76,12 @@
 			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="LadrEltHexIdType">
+	<xs:simpleType name="LadrEltHexIdentifierType">
 		<xs:annotation>
 			<xs:documentation>The identifier of an emergency locator transmitter.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:pattern value="([A-Z]|[0-9]){15}"/>
+			<xs:pattern value="([A-Z]|[0-9]){15}|([A-Z]|[0-9]){23}"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="RestrictedUniversallyUniqueIdentifierType">
@@ -79,6 +92,23 @@
 			<xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="AdtTypeChoiceType">
+		<xs:annotation>
+			<xs:documentation>A choice between a predefined autonomous distress tracking type and free text.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="type" type="ladr:AdtTypeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The type of autonomous distress tracking.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="other" type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Another type of autonomous distress tracking not covered by the predefined type.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
 	<xs:complexType name="DistressEventType">
 		<xs:annotation>
 			<xs:documentation>The collection of autonomous distress tracking data about a given flight in distress phase.</xs:documentation>
@@ -86,17 +116,17 @@
 		<xs:sequence>
 			<xs:element name="contributorCode" type="ladr:ContributorCodeType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>A code identifying [the LADR contributor ???], which enables to establish contributor domain for data validation.</xs:documentation>
+					<xs:documentation>A code which identifies unambiguously each LADR contributor.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="dataSource" type="ladr:DataSourceType" minOccurs="1" maxOccurs="1">
+			<xs:element name="typeOfAdt" type="ladr:TypeOfAdtType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>A code enabling the identification of the source of the autonomous distress tracking data.</xs:documentation>
+					<xs:documentation>The identification of the source of the autonomous distress tracking data.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="adtActivationMethod" type="ladr:AdtActivationMethodType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>A defined code which indicates if the activation was manual or automatic, and what parameter exceedance triggered the automatic activation, if applicable. The code also incorporates cancellation information to indicate when the ADT system no longer transmits due to the activating condition no longer being fulfilled.</xs:documentation>
+					<xs:documentation>A code which indicates the type of activation triggering the ADT message.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="flight" type="fx:FlightType" minOccurs="1" maxOccurs="1">
@@ -115,7 +145,7 @@
 				<xs:sequence/>
 				<xs:attribute name="altitudeSource" use="optional" type="ladr:LadrAltitudeSourceType">
 					<xs:annotation>
-						<xs:documentation>The source of the altitude.</xs:documentation>
+						<xs:documentation>A code which indicates the source of the altitude information.</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -128,12 +158,12 @@
 		<xs:sequence>
 			<xs:element name="identifier" type="ladr:UniversallyUniqueIdentifierType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>The identifier of the message.</xs:documentation>
+					<xs:documentation>The identifier of a LADR application message assigned by the message originator.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="timestamp" type="ladr:DateTimeUtcType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>The time and date that the communication was sent.</xs:documentation>
+					<xs:documentation>The date and time at which the message is sent.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="type" type="ladr:LadrApplicationMessageTypeType" minOccurs="1" maxOccurs="1">
@@ -166,7 +196,7 @@
 				<xs:sequence>
 					<xs:element name="altitude" type="ladr:LadrAltitudeType" minOccurs="0" maxOccurs="1">
 						<xs:annotation>
-							<xs:documentation>The vertical distance, at the last known position, of the aircraft considered as a point, measured from mean Sea level (MSL).</xs:documentation>
+							<xs:documentation>The vertical distance, at the last known position of the aircraft, measured from mean Sea level (MSL).</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="horizontalAccuracy" type="fb:DistanceType" minOccurs="0" maxOccurs="1">
@@ -192,7 +222,7 @@
 		<xs:complexContent>
 			<xs:extension base="fb:SurvivalCapabilitiesExtensionType">
 				<xs:sequence>
-					<xs:element name="carriedEltHexId" type="ladr:LadrEltHexIdType" minOccurs="0" maxOccurs="unbounded">
+					<xs:element name="carriedEltHexIdentifier" type="ladr:LadrEltHexIdentifierType" minOccurs="0" maxOccurs="unbounded">
 						<xs:annotation>
 							<xs:documentation>The identifier of an emergency locator transmitter carried by aircraft.</xs:documentation>
 						</xs:annotation>
@@ -200,6 +230,20 @@
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TypeOfAdtType">
+		<xs:sequence>
+			<xs:element name="type" type="ladr:AdtTypeChoiceType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A code which identifies unambiguously the originator of ADT messages.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="version" type="ladr:AdtVersionType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The version of the autonomous distress tracking,</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="UniversallyUniqueIdentifierType">
 		<xs:annotation>

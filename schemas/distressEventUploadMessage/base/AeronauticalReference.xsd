@@ -76,7 +76,11 @@ in order of LATITUDE FIRST, THEN LONGITUDE.</xs:documentation>
 			<xs:documentation>A location type restricted to lat/long location, named location, or reference location.</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
-			<xs:element name="position" type="fb:GeographicalPositionType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="position" type="fb:GeographicalPositionType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The values of latitude and longitude that define the position of a point on the surface of the Earth with respect to a reference datum. [specialised from ICAO Doc 9881]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:choice>
 	</xs:complexType>
 </xs:schema>

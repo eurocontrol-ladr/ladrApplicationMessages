@@ -35,6 +35,7 @@ Details on the ICCAIA: www.iccaia.org
 Details on the SESAR JU and its members: http://www.sesarju.eu/discover-sesar/partnering-smarter-aviation/members 
 Details on the US FAA: http://www.faa.gov/ </xs:documentation>
 	</xs:annotation>
+	<xs:import namespace="http://www.fixm.aero/base/4.2" schemaLocation="../../base/Types.xsd"/>
 	<xs:import namespace="http://www.fixm.aero/base/4.2" schemaLocation="../../base/AeronauticalReference.xsd"/>
 	<xs:import namespace="http://www.fixm.aero/base/4.2" schemaLocation="../../base/Extension.xsd"/>
 	<xs:complexType name="FlightEmergencyType">
@@ -42,7 +43,11 @@ Details on the US FAA: http://www.faa.gov/ </xs:documentation>
 			<xs:documentation>Groups emergency information (description, phase, position, etc) for the flight.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="lastContact" type="fx:LastContactType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="lastContact" type="fx:LastContactType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The last two-way contact between an ATS unit and the aircraft. [FIXM]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="LastContactType">
@@ -50,7 +55,11 @@ Details on the US FAA: http://www.faa.gov/ </xs:documentation>
 			<xs:documentation>The last two-way contact between an ATS unit and the aircraft. [FIXM]</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="position" type="fx:LastPositionReportType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="position" type="fx:LastPositionReportType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The position of the aircraft last known to ATS and a corresponding timestamp.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="LastPositionReportType">
@@ -66,6 +75,11 @@ Details on the US FAA: http://www.faa.gov/ </xs:documentation>
 			<xs:element name="position" type="fb:SignificantPointChoiceType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>The position of the aircraft last known to ATS.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="timeAtPosition" type="fb:TimeType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Timestamp corresponding to the last known position.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>

@@ -35,7 +35,7 @@ Details on the ICCAIA: www.iccaia.org
 Details on the SESAR JU and its members: http://www.sesarju.eu/discover-sesar/partnering-smarter-aviation/members 
 Details on the US FAA: http://www.faa.gov/ </xs:documentation>
 	</xs:annotation>
-	<xs:include schemaLocation="UnitOfMeasures.xsd"/>
+	<xs:include schemaLocation="UnitsOfMeasure.xsd"/>
 	<xs:simpleType name="MeasureType">
 		<xs:annotation>
 			<xs:documentation>The result from performing the act or process of ascertaining the value of a characteristic of some entity. [ISO 19103, chapter 6.5.7.2] </xs:documentation>
@@ -133,7 +133,11 @@ The value of a bearing indication (at a given point) is measured as the angle be
 		<xs:complexContent>
 			<xs:extension base="fb:AngleType">
 				<xs:sequence/>
-				<xs:attribute name="zeroBearingType" use="optional" type="fb:ZeroBearingTypeType"/>
+				<xs:attribute name="zeroBearingType" use="optional" type="fb:ZeroBearingTypeType">
+					<xs:annotation>
+						<xs:documentation>A code indicating the direction of the zero bearing.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

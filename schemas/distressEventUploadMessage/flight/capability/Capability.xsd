@@ -55,7 +55,11 @@ Details on the US FAA: http://www.faa.gov/ </xs:documentation>
 					<xs:documentation>Additional Communication capabilities available on the aircraft.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="selectiveCallingCode" type="fx:SelectiveCallingCodeType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="selectiveCallingCode" type="fx:SelectiveCallingCodeType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A code that consists of two 2-letter pairs and acts as a paging system for an ATS unit to establish voice communications with the pilot of an aircraft.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="FlightCapabilitiesType">
@@ -67,8 +71,16 @@ c) where applicable, authorization from the appropriate authority.
 [FIXM]</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="communication" type="fx:CommunicationCapabilitiesType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="survival" type="fx:SurvivalCapabilitiesType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="communication" type="fx:CommunicationCapabilitiesType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The serviceable communications equipment, available on the aircraft at the time of flight, and associated flight crew qualifications that may be used to communicate with ATS units. [FIXM]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="survival" type="fx:SurvivalCapabilitiesType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The emergency and survival equipments available on board the aircraft. [FIXM]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="SurvivalCapabilitiesType">

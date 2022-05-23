@@ -56,9 +56,21 @@ Details on the US FAA: http://www.faa.gov/ </xs:documentation>
 			<xs:documentation>This is the central object of the FIXM Logical Model. It groups all information about the flight. [FIXM]</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="aircraft" type="fx:AircraftType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="emergency" type="fx:FlightEmergencyType" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="flightIdentification" type="fx:FlightIdentificationType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="aircraft" type="fx:AircraftType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Aircraft enabling the flight. [FIXM]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="emergency" type="fx:FlightEmergencyType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Groups emergency information (description, phase, position, etc) for the flight.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="flightIdentification" type="fx:FlightIdentificationType" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>A container of flight identifying data. [FIXM]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="operator" type="fb:AircraftOperatorType" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>A person, organization or enterprise engaged in or offering to engage in an aircraft operation. [ICAO Annex 9]</xs:documentation>

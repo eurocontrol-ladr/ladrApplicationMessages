@@ -32,7 +32,20 @@ LadrApplicationMessage --> LadrApplicationMessageMetadata : +metadata [1]
 class DistressEvent	
 <<LADR_Application>> DistressEvent	
 DistressEvent : + contributorCode [1] ContributorCode	
-DistressEvent : + dataSource [1] DataSource	
+class TypeOfAdt	
+<<LADR_Application>> TypeOfAdt	
+class AdtTypeChoice	
+<<LADR_Application>> AdtTypeChoice	
+class AdtType	
+<<LADR_Application>> AdtType	
+AdtType : ELT_DT	
+AdtType : GCP_01	
+AdtType : GCP_02	
+AdtTypeChoice --> AdtType : +type [1]	
+AdtTypeChoice : + other [1] st	
+TypeOfAdt --> AdtTypeChoice : +type [1]	
+TypeOfAdt : + version [0..1] AdtVersion	
+DistressEvent --> TypeOfAdt : +typeOfAdt [1]	
 DistressEvent : + adtActivationMethod [0..1] AdtActivationMethod	
 class Flight	
 <<FIXM_Core>> Flight	
@@ -56,7 +69,7 @@ class SurvivalCapabilitiesExtension
 <<FIXM_Core>> SurvivalCapabilitiesExtension	
 class LadrSurvivalCapabilitiesExtension	
 <<LADR_Application>> LadrSurvivalCapabilitiesExtension	
-LadrSurvivalCapabilitiesExtension : + carriedEltHexId [0..*] LadrEltHexId	
+LadrSurvivalCapabilitiesExtension : + carriedEltHexIdentifier [0..*] LadrEltHexIdentifier	
 SurvivalCapabilitiesExtension<|-- LadrSurvivalCapabilitiesExtension	
 SurvivalCapabilities --> SurvivalCapabilitiesExtension : +extension [0..*]	
 FlightCapabilities --> SurvivalCapabilities : +survival [0..1]	
@@ -76,6 +89,7 @@ class GeographicalPosition
 GeographicalPosition : + pos [1] LatLongPos	
 SignificantPointChoice --> GeographicalPosition : +position [1]	
 LastPositionReport --> SignificantPointChoice : +position [1]	
+LastPositionReport : + timeAtPosition [1] Time	
 class LastPositionReportExtension	
 <<FIXM_Core>> LastPositionReportExtension	
 class LadrLastPositionReportExtension	
@@ -84,7 +98,7 @@ class LadrAltitude
 <<LADR_Application>> LadrAltitude	
 class LadrAltitudeSource	
 <<LADR_Application>> LadrAltitudeSource	
-LadrAltitudeSource : BARO	
+LadrAltitudeSource : BAROMETRIC	
 LadrAltitudeSource : GNSS	
 LadrAltitude --> LadrAltitudeSource : +altitudeSource [1]	
 LadrLastPositionReportExtension --> LadrAltitude : +altitude [0..1]	
@@ -112,6 +126,7 @@ Flight --> FlightIdentification : +flightIdentification [0..1]
 DistressEvent --> Flight : +flight [1]	
 LadrApplicationMessage --> DistressEvent : +distressEvent [1]	
 ```	
+
 
 
 

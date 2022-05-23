@@ -50,7 +50,12 @@ This is the ICAO Operator Code as standardised by ICAO Doc 8585 Manual on Design
 			<xs:documentation>A person, organization or enterprise engaged in or offering to engage in an aircraft operation. [ICAO Annex 9]</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="designatorIcao" type="fb:AircraftOperatorDesignatorType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="designatorIcao" type="fb:AircraftOperatorDesignatorType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>The identifier of the Aircraft Operator as assigned by ICAO. [FIXM]
+This is the ICAO Operator Code as standardised by ICAO Doc 8585 Manual on Designators for Aircraft Operating Agencies, Aeronautical Authorities and Services.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>

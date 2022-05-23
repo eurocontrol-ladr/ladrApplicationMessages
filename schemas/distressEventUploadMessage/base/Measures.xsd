@@ -35,7 +35,7 @@ Details on the ICCAIA: www.iccaia.org
 Details on the SESAR JU and its members: http://www.sesarju.eu/discover-sesar/partnering-smarter-aviation/members 
 Details on the US FAA: http://www.faa.gov/ </xs:documentation>
 	</xs:annotation>
-	<xs:include schemaLocation="UnitsOfMeasure.xsd"/>
+	<xs:include schemaLocation="UnitOfMeasures.xsd"/>
 	<xs:simpleType name="MeasureType">
 		<xs:annotation>
 			<xs:documentation>The result from performing the act or process of ascertaining the value of a characteristic of some entity. [ISO 19103, chapter 6.5.7.2] </xs:documentation>

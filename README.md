@@ -6,7 +6,7 @@ This GITHUB repository supports the **development** of the XML schemas of the LA
 ## Content
 * ./schemas: contains the XSD schemas for the LADR Application Messages **under development**. One folder per LADR Application Message.
 * ./samples: contains XML examples of LADR Application Messages conformant to the XSD schemas.
-* ladr_data_catalog.xlsx is contains data elements and definitions used in the schames made available in the ./schemas folder.
+* ladr_data_catalog.xlsx contains data elements and definitions used in the schemas made available in the ./schemas folder. Follow the link and use the download button to access content.
 * toBeDiscussed.md  is a record of discussion topics in support of schema development.
 
 

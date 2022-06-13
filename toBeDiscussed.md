@@ -487,4 +487,11 @@ Similarly, which precision (number of digit) would be right for latitude/longitu
 - minimum 3 digits (would be worth up to 110m) ?
 - maximum 5 digits (would be worth up to 1.1m) ?
 
+Examples from received samples:
+
+```xml
+<fb:pos>39.449 -77.010</fb:pos>
+<fb:pos>38.99896 -76.85370</fb:pos>
+<fb:pos>12.041 100.0211</fb:pos>
+```
 

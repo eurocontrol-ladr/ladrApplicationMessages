@@ -463,3 +463,28 @@ Fields:
 - TBD
 
 ---
+
+## Precision of date time values
+
+The current schemas allow for date time to be exchanged with a precision down to milliseconds. In all XML samples received so far, data times were provided with a precision limited to whole seconds, for both message timestamps and ‘times at position’. Examples:
+
+```xml
+<ladr:timestamp>2021-06-24T16:20:32Z</ladr:timestamp>
+<fx:timeAtPosition>2021-06-24T16:20:25Z</fx:timeAtPosition>
+```
+
+The topic of date time precisions was discussed recently within the FIXM project. It was concluded that:
+- For aviation times, precision should be limited to whole seconds;
+- For message timestamps, milliseconds should still allowed, because this precisions can still be usefull e.g. in computer logs
+These rules on date time precision will actually be enforced in the future FIXM version.
+
+Proposal for LADR: apply the same rules.
+
+
+## Precision of lat/long values
+
+Similarly, which precision (number of digit) would be right for latitude/longitude
+- minimum 3 digits (would be worth up to 110m) ?
+- maximum 5 digits (would be worth up to 1.1m) ?
+
+

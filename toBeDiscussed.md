@@ -440,3 +440,26 @@ The LADR assumes that the sending of the distres event data and the operational 
 
 **Envisaged changes to the schemas following meeting on 17/05**
 - no change
+
+---
+
+## Encoding optional data: 
+
+### To be discussed: 
+The encoding of optional data needs to be verified. Possible clarifications need to be discussed.
+
+Fields:
+- horizontalAccuracy;
+- groundSpeed;
+- other?
+
+### Resolution:
+
+**13/06/2022: LADR FIXM message development – meeting #4:**
+- TBD;
+- TBD.
+
+**Envisaged changes to the schemas following meeting on 13/06**
+- TBD
+
+---

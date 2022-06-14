@@ -457,8 +457,9 @@ Fields:
 
 **13/06/2022: LADR FIXM message development – meeting #4:**
 - the group discussed the approach in providing horizontal accuracy as a distance measure accompanied with a UOM;
-- it was confirmed that the schema of the upload message caters for the capability to encode the informatio;
-- the information on gitHUB was pointed at;
+- it was confirmed that the schema of the upload message caters for the capability to encode the information;
+- the location on gitHUB with additional relevant encoding information was shared with the group:
+- https://github.com/eurocontrol-ladr/ladrApplicationMessages/tree/main/schemas/distressEventUploadMessage/base
 - contributors where asked to encode some additional samples accordingly;
 - regarding groundSpeed a similar discussion occured with a similar clarification and resolution outlook.
 

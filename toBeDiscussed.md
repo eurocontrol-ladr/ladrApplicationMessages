@@ -456,11 +456,14 @@ Fields:
 ### Resolution:
 
 **13/06/2022: LADR FIXM message development – meeting #4:**
-- TBD;
-- TBD.
+- the group discussed the approach in providing horizontal accuracy as a distance measure accompanied with a UOM;
+- it was confirmed that the schema of the upload message caters for the capability to encode the informatio;
+- the information on gitHUB was pointed at;
+- contributors where asked to encode some additional samples accordingly;
+- regarding groundSpeed a similar discussion occured with a similar clarification and resolution outlook.
 
 **Envisaged changes to the schemas following meeting on 13/06**
-- TBD
+- NONE
 
 ---
 
@@ -480,6 +483,14 @@ These rules on date time precision will actually be enforced in the future FIXM 
 
 Proposal for LADR: apply the same rules.
 
+### Resolution:
+
+**13/06/2022: LADR FIXM message development – meeting #4:**
+- the group rejected the proposal and confirmed that there is no need for a data capture rule for message timestamps to be set to milliseconds;
+- the current contributor practice as per the samples will be continued; in the event of issues on the LADR side this will be discussed later.
+
+**Envisaged changes to the schemas following meeting on 13/06**
+- NONE
 
 ## Precision of lat/long values
 
@@ -494,4 +505,11 @@ Examples from received samples:
 <fb:pos>38.99896 -76.85370</fb:pos>
 <fb:pos>12.041 100.0211</fb:pos>
 ```
+### Resolution:
 
+**13/06/2022: LADR FIXM message development – meeting #4:**
+- the group confirmed that there is no need for any data capture rule;
+- the precision shall be sufficient in correlation to the horizontal accuracy.
+
+**Envisaged changes to the schemas following meeting on 13/06**
+- NONE

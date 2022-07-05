@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ladr:LadrApplicationMessage xmlns:fb="http://www.fixm.aero/base/4.2" xmlns:fx="http://www.fixm.aero/flight/4.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ladr="http://www.eurocontrol.int/nm/fixm/app/ladr/1.0" xsi:schemaLocation="http://www.eurocontrol.int/nm/fixm/app/ladr/1.0 ../../schemas/distressEventUploadMessage/ladrMessage/LadrApplicationMessage.xsd">
+	<ladr:metadata>
+		<ladr:identifier codeSpace="urn:uuid">1ff377fa-1efc-4ead-937c-77b23cbc88ee</ladr:identifier>
+		<ladr:timestamp>2021-06-24T17:40:37Z</ladr:timestamp>
+		<ladr:type>DISTRESS_EVENT_UPLOAD_MESSAGE</ladr:type>
+	</ladr:metadata>
+	<ladr:distressEvent>
+		<ladr:contributorCode>224</ladr:contributorCode>
+		<ladr:typeOfAdt>
+			<ladr:type>
+				<ladr:type>ELT_DT</ladr:type>
+			</ladr:type>
+		</ladr:typeOfAdt>
+		<ladr:adtActivationMethod>100003</ladr:adtActivationMethod>
+		<ladr:flight>
+			<fx:aircraft>
+				<fx:aircraftAddress>AF0F67</fx:aircraftAddress>
+				<fx:capabilities>
+					<fx:survival>
+						<fx:extension xsi:type="ladr:LadrSurvivalCapabilitiesExtensionType">
+							<ladr:carriedEltHexIdentifier>2DD25787B3BFDFF</ladr:carriedEltHexIdentifier>
+						</fx:extension>
+					</fx:survival>
+				</fx:capabilities>
+				<fx:registration></fx:registration>
+			</fx:aircraft>
+			<fx:emergency>
+				<fx:lastContact>
+					<fx:position>
+						<fx:extension xsi:type="ladr:LadrLastPositionReportExtensionType">
+							<ladr:altitude uom="M" altitudeSource="GNSS">1200</ladr:altitude>
+                            <ladr:horizontalAccuracy uom="M">62</ladr:horizontalAccuracy>
+						</fx:extension>
+						<fx:position>
+							<fb:position srsName="urn:ogc:def:crs:EPSG::4326">
+								<fb:pos>38.284 -75.639</fb:pos>
+							</fb:position>
+						</fx:position>
+						<fx:timeAtPosition>2021-06-24T17:40:27Z</fx:timeAtPosition>
+					</fx:position>
+				</fx:lastContact>
+			</fx:emergency>
+			<fx:operator>
+				<fb:designatorIcao>AAL</fb:designatorIcao>
+			</fx:operator>
+		</ladr:flight>
+	</ladr:distressEvent>
+</ladr:LadrApplicationMessage>

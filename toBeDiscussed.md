@@ -518,6 +518,7 @@ Examples from received samples:
 ## horizontalAccuracy UOM preference
 
 Should horizontal accuracy be calculated to a preferred UOM (M, KM)?
+Is there any restriction in the use of types (e.g. Integer, Double, ...)?
 
 ### Resolution:
 

@@ -529,8 +529,8 @@ Should horizontal accuracy be calculated to a preferred UOM (M, KM)?
 
 ## Dilution of precision (DOP)
 
-Is dilution DOP information needed in relation to accuracy data?
-Accuracy in satellite based positioning is variable. DOP is a factor that quantifies error propagation using equations bringing into account horizontal, vertical, time, geometrical and position variability factors.
+Is dilution of precision (DOP) information needed in relation to accuracy data?
+Accuracy in satellite based positioning is variable. DOP calculation brings into account horizontal, vertical, time, geometrical and position variability factors.
 
 DOP is a classification:
 

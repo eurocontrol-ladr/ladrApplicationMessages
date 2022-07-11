@@ -519,11 +519,32 @@ Examples from received samples:
 
 Should horizontal accuracy be calculated to a preferred UOM (M, KM)?
 
-```
 ### Resolution:
 
 **11/07/2022: LADR FIXM message development – meeting #5:**
-- TBD;
+- TBD
 
 **Envisaged changes to the schemas following meeting on 11/07**
-- TBD;
+- TBD
+
+## Dilution of precision (DOP)
+
+Is dilution DOP information needed in relation to accuracy data?
+Accuracy in satellite based positioning is variable. DOP is a factor that quantifies error propagation using equations bringing into account horizontal, vertical, time, geometrical and position variability factors.
+
+DOP is a classification:
+
+DOP <1	-> Ideal: Highest possible confidence level to be used for applications demanding the highest possible precision at all times.
+DOP 1-2	-> Excellent: At this confidence level, positional measurements are considered accurate enough to meet all but the most sensitive applications.
+DO 2-5	-> Good: Represents a level that marks the minimum appropriate for making accurate decisions. Positional measurements could be used to make reliable in-route navigation suggestions to the user.
+DOP 5-10 -> Moderate: Positional measurements could be used for calculations, but the fix quality could still be improved. A more open view of the sky is recommended.
+DOP 10-20 -> Fair: Represents a low confidence level. Positional measurements should be discarded or used only to indicate a very rough estimate of the current location.
+DOP >20 -> Poor: At this level, measurements are inaccurate by as much as 300 meters with a 6-meter accurate device (50 DOP × 6 meters) and should be discarded.
+
+### Resolution:
+
+**11/07/2022: LADR FIXM message development – meeting #5:**
+- TBD
+
+**Envisaged changes to the schemas following meeting on 11/07**
+- TBD

@@ -514,3 +514,16 @@ Examples from received samples:
 
 **Envisaged changes to the schemas following meeting on 13/06**
 - NONE
+
+## horizontalAccuracy UOM preference
+
+Should horizontal accuracy be calculated to a preferred UOM (M, KM)?
+
+```
+### Resolution:
+
+**11/07/2022: LADR FIXM message development – meeting #5:**
+- TBD;
+
+**Envisaged changes to the schemas following meeting on 11/07**
+- TBD;

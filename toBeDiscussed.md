@@ -523,10 +523,12 @@ Is there any restriction in the use of types (e.g. Integer, Double, ...)?
 ### Resolution:
 
 **11/07/2022: LADR FIXM message development – meeting #5:**
-- TBD
+- the meeting concluded for now not to standardize UOMs to be used and go with the flexibility of the message schema; if the need emerges later from a user perspective the topic can be visited again;
+- regarding the use of basic types to encode accuracy an explanation was given at message schema level indicating that the validity of the message when not providing decimals as part of the FIXM distance type value;
+- it was also indicated that for now the encoding does not foresee standardized default values; in this context it was decided earlier to remove the capability of Nillability meaning that the mandatory data elements must be provided. 
 
 **Envisaged changes to the schemas following meeting on 11/07**
-- TBD
+- NONE
 
 ## Dilution of precision (DOP)
 
@@ -550,7 +552,8 @@ DOP >20 -> Poor: At this level, measurements are inaccurate by as much as 300 me
 ### Resolution:
 
 **11/07/2022: LADR FIXM message development – meeting #5:**
-- TBD
+- it was agreed to discuss this topic further during a later stage of the development;
+- the information is currently not required per Doc 10150 and could be a topic for future standardization should the need for it emerge.
 
 **Envisaged changes to the schemas following meeting on 11/07**
-- TBD
+- NONE

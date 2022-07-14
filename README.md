@@ -27,7 +27,8 @@ This GITHUB repository supports the **development** of the XML schemas of the LA
 ```
 
 
-## Status - 11 July 2022
+## Status
+11 July 2022:
 * Distress Event Upload Message: samples reviewed and validated - baseline for system development sprints.
 * Distress Event Upload Validation Message: example provided subject to further evolution.
 * Other messages covering user interaction: on-going.

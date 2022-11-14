@@ -142,7 +142,6 @@
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fb:AltitudeType">
-				<xs:sequence/>
 				<xs:attribute name="altitudeSource" use="optional" type="ladr:LadrAltitudeSourceType">
 					<xs:annotation>
 						<xs:documentation>A code which indicates the source of the altitude information.</xs:documentation>

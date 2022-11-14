@@ -39,12 +39,10 @@ Details on the US FAA: http://www.faa.gov/ </xs:documentation>
 		<xs:annotation>
 			<xs:documentation>A base class for all LastPositionReport class extensions.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence/>
 	</xs:complexType>
 	<xs:complexType name="SurvivalCapabilitiesExtensionType" abstract="true">
 		<xs:annotation>
 			<xs:documentation>A base class for all SurvivalCapabilities class extensions.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence/>
 	</xs:complexType>
 </xs:schema>

@@ -132,7 +132,6 @@ The value of a bearing indication (at a given point) is measured as the angle be
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="fb:AngleType">
-				<xs:sequence/>
 				<xs:attribute name="zeroBearingType" use="optional" type="fb:ZeroBearingTypeType">
 					<xs:annotation>
 						<xs:documentation>A code indicating the direction of the zero bearing.</xs:documentation>
@@ -146,9 +145,7 @@ The value of a bearing indication (at a given point) is measured as the angle be
 			<xs:documentation>A type for returning the separation between two points. [ISO 19103, chapter 6.5.7.7]</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-			<xs:extension base="fb:LengthType">
-				<xs:sequence/>
-			</xs:extension>
+			<xs:extension base="fb:LengthType"/>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="GroundSpeedType">

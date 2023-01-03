@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:LadrApplicationMessage xmlns="http://www.fixm.aero/base/4.2" xmlns:ns2="http://www.fixm.aero/flight/4.2" xmlns:ns3="http://www.eurocontrol.int/nm/fixm/app/ladr/1.0">
+	<ns3:metadata>
+		<ns3:identifier codeSpace="urn:uuid">f4f66928-8a15-4e72-b827-e53d98f06ffb</ns3:identifier>
+		<ns3:timestamp>2022-12-01T20:08:03.717Z</ns3:timestamp>
+		<ns3:type>DISTRESS_EVENT_UPLOAD_MESSAGE</ns3:type>
+	</ns3:metadata>
+	<ns3:distressEvent>
+		<ns3:contributorCode>001</ns3:contributorCode>
+		<ns3:typeOfAdt>
+			<ns3:type>
+				<ns3:type>ELT_DT</ns3:type>
+</ns3:type>
+		</ns3:typeOfAdt>
+		<ns3:flight>
+			<ns2:aircraft>
+				<ns2:capabilities>
+					<ns2:survival>
+						<ns2:extension xsi:type="ns3:LadrSurvivalCapabilitiesExtensionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+							<ns3:carriedEltHexIdentifier>1A72E26E013FDFF</ns3:carriedEltHexIdentifier>
+						</ns2:extension>
+					</ns2:survival>
+				</ns2:capabilities>
+			</ns2:aircraft>
+			<ns2:emergency>
+				<ns2:lastContact>
+					<ns2:position>
+						<ns2:extension xsi:type="ns3:LadrLastPositionReportExtensionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+						<ns2:position>
+							<position srsName="urn:ogc:def:crs:EPSG::4326">
+								<pos>28.0 -82.0</pos>
+							</position>
+						</ns2:position>
+						<ns2:timeAtPosition>2022-07-19T14:52:32.340Z</ns2:timeAtPosition>
+					</ns2:position>
+				</ns2:lastContact>
+			</ns2:emergency>
+			<ns2:operator>
+				<designatorIcao>AAL</designatorIcao>
+			</ns2:operator>
+		</ns3:flight>
+	</ns3:distressEvent>
+</ns3:LadrApplicationMessage>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:LadrApplicationMessage xmlns="http://www.fixm.aero/flight/4.2" xmlns:ns2="http://www.fixm.aero/base/4.2" xmlns:ns3="http://www.eurocontrol.int/nm/fixm/app/ladr/1.0">
+	<ns3:metadata>
+		<ns3:identifier codeSpace="urn:uuid">0481720e-07df-4ca9-ac20-ec5929697903</ns3:identifier>
+		<ns3:timestamp>2022-12-01T19:25:47.435Z</ns3:timestamp>
+		<ns3:type>DISTRESS_EVENT_UPLOAD_MESSAGE</ns3:type>
+	</ns3:metadata>
+	<ns3:distressEvent>
+		<ns3:contributorCode>001</ns3:contributorCode>
+		<ns3:typeOfAdt>
+			<ns3:type>
+				<ns3:type>ELT_DT</ns3:type>
+</ns3:type>
+		</ns3:typeOfAdt>
+		<ns3:flight>
+			<aircraft>
+				<capabilities>
+					<survival>
+						<extension xsi:type="ns3:LadrSurvivalCapabilitiesExtensionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+							<ns3:carriedEltHexIdentifier>AE3422E40014E1B1FFBD620</ns3:carriedEltHexIdentifier>
+						</extension>
+					</survival>
+				</capabilities>
+			</aircraft>
+			<emergency>
+				<lastContact>
+					<position>
+						<extension xsi:type="ns3:LadrLastPositionReportExtensionType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+							<ns3:altitude altitudeSource="BAROMETRIC" uom="M">150.0</ns3:altitude>
+						</extension>
+						<position>
+							<ns2:position srsName="urn:ogc:def:crs:EPSG::4326">
+								<ns2:pos>52.7 13.3</ns2:pos>
+							</ns2:position>
+						</position>
+						<timeAtPosition>2022-08-08T10:50:00.300Z</timeAtPosition>
+					</position>
+				</lastContact>
+			</emergency>
+			<operator>
+				<ns2:designatorIcao>XYZ</ns2:designatorIcao>
+			</operator>
+		</ns3:flight>
+	</ns3:distressEvent>
+</ns3:LadrApplicationMessage>

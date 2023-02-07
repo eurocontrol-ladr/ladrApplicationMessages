@@ -43,3 +43,38 @@ Message timestamps can use higher precision, as needed.
 > FIXM implementers are therefore invited to crosscheck that their systems correctly interpret FIXM times as UTC time.
 
 
+## Aircraft Identification vs Aircraft Registration vs Aircraft Address
+
+ICAO Doc 10150 identifies a number of fields exchanged in order to enabling the identification of an aircraft in distress. These fields include the `Aircraft Identification`, the `Aircraft Registration` and the `Aircraft Address`.
+
+### Aircraft Identification
+
+The `Aircraft Identification`, abbreviated ACID, is defined by ICAO as *A group of letters, figures or a combination thereof which is either identical to, or the coded equivalent of, the aircraft call sign to be used in air-ground communications, and which is used to identify the aircraft in ground-ground air traffic services communications.* The `Aircraft Identification` is NOT an identifier of an aircraft. It is an identifier of a flight, i.e. the operation of an aircraft from A to B. 
+
+Examples of ACID: 
+- ACID = `MAS370`, pronounced as `Malaysia Airlines Three-Seven-Zero` (= the callsign)
+- ACID = `AFR447`, pronounced as `Air France Four-Four-Seven` (= the callsign)
+- ACID = `BAW1234`, pronounced as `Speedbird One-Two-Three-Four` (= the callsign)
+
+### Aircraft Registration
+
+The `Aircraft Registration` is *a unique, alphanumeric string that identifies a civil aircraft and consists of the Aircraft Nationality or Common Mark and an additional alphanumeric string assigned by the state of registry or common mark registering authority.* The `Aircraft Registration` is commonly called tail number, and is visible on the airframe. 
+
+Examples of Aircraft Registration: 
+- Aircraft Registration = `9MMRO` for the aircraft operated during flight `MAS370`
+
+![Aircraft Registration 9MMRO](./MH370_aircraft_reg.png)
+
+### Aircraft Address
+
+The `Aircraft Address` is *A unique combination of twenty-four bits available for assignment to an aircraft for the purpose of air-ground communications, navigation and surveillance.* The `Aircraft Address` is hardcoded in the aircraft and is commonly called Mode S Address.
+
+Examples of Aircraft Address: 
+- Aircraft Address = `4010DA`
+
+### Overview
+
+![Overview](./aircraft_id_reg_address_from_AIRM.png)
+
+
+

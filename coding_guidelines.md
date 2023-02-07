@@ -1,10 +1,9 @@
 # Coding guidelines
 
 ## Introduction
-TODO
+This page provides LADR implementers with guidance for encoding the LADR Application messages. Part of this guidance may eventually feed into the official [FIXM User Manual](https://docs.fixm.aero/).
 
 ## Date/Time Specification
-> Note: The following piece of guidance will eventually  be available on the FIXM User Manual (scheduled for Q1 2023).
 
 FIXM requires times to be expressed in UTC. A constraint is therefore placed on the FIXM classes used to represent date/time values that
 imposes the use of the trailing character `Z` to indicate UTC, in line with the W3C XSD specification.
@@ -45,7 +44,7 @@ Message timestamps can use higher precision, as needed.
 
 ## Aircraft Identification vs Aircraft Registration vs Aircraft Address
 
-ICAO Doc 10150 identifies a number of fields exchanged in order to enabling the identification of an aircraft in distress. These fields include the `Aircraft Identification`, the `Aircraft Registration` and the `Aircraft Address`.
+ICAO Doc 10150 identifies a number of fields exchanged in order to enable the identification of an aircraft in distress. These fields include the `Aircraft Identification`, the `Aircraft Registration` and the `Aircraft Address`.
 
 ### Aircraft Identification
 
@@ -56,14 +55,36 @@ Examples of ACID:
 - ACID = `AFR447`, pronounced as `Air France Four-Four-Seven` (= the callsign)
 - ACID = `BAW1234`, pronounced as `Speedbird One-Two-Three-Four` (= the callsign)
 
+Encoding of ACID in a Distress Event Upload Message
+
+```xml
+<!--xmlns:fx="http://www.fixm.aero/flight/4.2"-->	
+<ladr:LadrApplicationMessage ...>
+  <ladr:distressEvent>
+    <ladr:flight>
+      <fx:flightIdentification>
+        <fx:aircraftIdentification>MAS370</fx:aircraftIdentification>
+```
+
 ### Aircraft Registration
 
 The `Aircraft Registration` is *a unique, alphanumeric string that identifies a civil aircraft and consists of the Aircraft Nationality or Common Mark and an additional alphanumeric string assigned by the state of registry or common mark registering authority.* The `Aircraft Registration` is commonly called tail number, and is visible on the airframe. 
 
 Examples of Aircraft Registration: 
-- Aircraft Registration = `9MMRO` for the aircraft operated during flight `MAS370`
+- Aircraft Registration = `9M-MRO` for the aircraft operated during flight `MAS370`
 
-![Aircraft Registration 9MMRO](./MH370_aircraft_reg.png)
+![Aircraft Registration 9MMRO](./media/MH370_aircraft_reg.png)
+
+Encoding of Aircraft Registration in a Distress Event Upload Message
+
+```xml
+<!--xmlns:fx="http://www.fixm.aero/flight/4.2"-->	
+<ladr:LadrApplicationMessage ...>
+  <ladr:distressEvent>
+    <ladr:flight>
+      <fx:aircraft>
+        <fx:registration>9MMRO</fx:registration>
+```
 
 ### Aircraft Address
 
@@ -72,9 +93,20 @@ The `Aircraft Address` is *A unique combination of twenty-four bits available fo
 Examples of Aircraft Address: 
 - Aircraft Address = `4010DA`
 
+```xml
+<!--xmlns:fx="http://www.fixm.aero/flight/4.2"-->	
+<ladr:LadrApplicationMessage ...>
+  <ladr:distressEvent>
+    <ladr:flight>
+      <fx:aircraft>
+        <fx:aircraftAddress>4010DA</fx:aircraftAddress>
+```
+
 ### Overview
 
-![Overview](./aircraft_id_reg_address_from_AIRM.png)
+The picture below, which has been built using the [AIRM 1.1.0 Conceptual Model](https://airm.aero/developers/downloads), provides a high-level overview of the three concepts of `Aircraft Identification`, `Aircraft Registration` and `Aircraft Address`.
+
+![Overview](./media/aircraft_id_reg_address_from_AIRM.png)
 
 
 

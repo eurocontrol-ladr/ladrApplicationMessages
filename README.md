@@ -1,5 +1,9 @@
-# LADR Application Messages
+# Life-cycle information - 31 May 2023
+The content of this repository has served its purpose and is frozen per the 31st of May 2023. 
+GitHUB will no longer be used as the platform for API related development purposes.
+All technical information and artefacts (e.g. schemas to be used) will be shared through other means.
 
+## LADR Application Messages
 This GITHUB repository supports the **development** of the XML schemas of the LADR Application Messages that are exchanged between LADR Contributors, LADR and LADR Users. This is NOT the reference for the official releases of the LADR schemas.
 
 

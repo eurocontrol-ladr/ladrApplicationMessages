@@ -1,4 +1,4 @@
-=== Life-cycle information - 31 May 2023 ===
+## Life-cycle information - 31 May 2023
 The content of this repository has served its purpose and is frozen per the 31st of May 2023. 
 GitHUB will no longer be used as the platform for API related development purposes.
 All technical information and artefacts (e.g. schemas to be used) will be shared through other means.
